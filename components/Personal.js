@@ -1,7 +1,7 @@
 const Personal = () => {
 	return (
 		<div className='flex flex-col pt-2'>
-			<div className='bg-white p-6 w-64 h-60 mt-24 rounded-xl'>
+			<div className='bg-white p-6 w-64 h-60 sm:mt-24 mt-0 rounded-xl'>
 				<div className='text-mygreen font-bold bg-transparent mb-4'>
 					Personal Profile
 				</div>
