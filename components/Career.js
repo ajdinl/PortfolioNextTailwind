@@ -12,7 +12,7 @@ const Career = () => {
 						</div>
 						<div className='mb-2'>
 							<div className='bg-white text-black'>Xenon-forte d.o.o.</div>
-							<div className='bg-white text-black'>Jan 2021 to present</div>
+							<div className='bg-white text-black'>Jan 2021 to Nov 2021</div>
 						</div>
 						<div className='ml-4 bg-white'>
 							<ul className='list-disc mb-4'>
