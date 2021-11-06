@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import Career from '../components/Career'
-import Info from '../components/Info'
-import Personal from '../components/Personal'
+import Career from './components/Career'
+import Info from './components/Info'
+import Personal from './components/Personal'
 
 export default function Home() {
 	return (

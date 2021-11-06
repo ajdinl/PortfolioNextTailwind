@@ -1,4 +1,4 @@
-import user from '../data/user.json'
+import user from '../../data/user.json'
 
 const Personal = () => {
 	const { profile, languages, more, other, personalities, hobbies } =

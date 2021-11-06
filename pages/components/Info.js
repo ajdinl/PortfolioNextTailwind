@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import user from '../data/user.json'
+import user from '../../data/user.json'
 
 const Info = () => {
 	const { fullName, description, cell, git, linkedin, linkedinLink, address } =
