@@ -6,13 +6,13 @@ const Personal = () => {
 
 	return (
 		<div className='flex flex-col pt-2'>
-			<div className='bg-white p-6 w-64 h-60 sm:mt-24 mt-0 rounded-xl'>
+			<div className='bg-white p-6 w-64 h-60 sm:mt-24 mt-0 rounded-2xl'>
 				<div className='text-mygreen font-bold bg-transparent mb-4'>
 					Personal Profile
 				</div>
 				<div className='text-mygrey text-md bg-transparent'>{profile}</div>
 			</div>
-			<div className='bg-white p-6 w-64 h-auto mt-8 rounded-xl'>
+			<div className='bg-white p-6 w-64 h-auto mt-8 rounded-2xl'>
 				<div className='text-mygreen font-bold bg-transparent mb-4'>Skills</div>
 				<div className='text-mygrey text-sm bg-transparent'>
 					<div className='bg-transparent font-bold text-black'>
@@ -25,7 +25,7 @@ const Personal = () => {
 					<div className='bg-transparent mb-3 mt-1'>{other}</div>
 				</div>
 			</div>
-			<div className='bg-white p-6 w-64 h-80 mt-8 rounded-xl mb-10'>
+			<div className='bg-white p-6 w-64 h-80 mt-8 rounded-2xl mb-10'>
 				<div className='text-mygreen font-bold bg-transparent mb-4'>
 					About me
 				</div>

@@ -6,7 +6,7 @@ const Career = () => {
 
 	return (
 		<div className='flex flex-col pt-2'>
-			<div className='bg-white p-6 w-64 h-auto rounded-xl sm:mt-24 mt-0'>
+			<div className='bg-white p-6 w-64 h-auto rounded-2xl sm:mt-24 -mt-8'>
 				<div className='text-mygreen font-bold bg-transparent mb-4'>
 					Career Summary
 				</div>
@@ -47,7 +47,7 @@ const Career = () => {
 					</div>
 				</div>
 			</div>
-			<div className='bg-white p-6 w-64 h-auto mt-8 rounded-xl'>
+			<div className='bg-white p-6 w-64 h-auto mt-8 rounded-2xl'>
 				<div className='text-mygreen font-bold bg-transparent mb-4'>
 					Education
 				</div>

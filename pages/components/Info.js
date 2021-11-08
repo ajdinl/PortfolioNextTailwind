@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import user from '../../data/user.json'
+import Button from './Button'
 
 const Info = () => {
 	const { fullName, description, cell, git, linkedin, linkedinLink, address } =
@@ -17,25 +18,28 @@ const Info = () => {
 						alt='myImage'
 					/>
 				</div>
-				<div className='-mt-10 w-60 h-40 bg-myblue rounded-lg mb-10'>
+				<div className='flex flex-row flex-wrap -mt-10 w-60 h-40 bg-myblue rounded-2xl mb-10 justift-center'>
 					<div className='text-2xl font-heboo font-extrabold ml-14 pt-12 bg-transparent'>
 						{fullName}
 					</div>
-					<div className='text-white bg-transparent text-sm ml-16'>
+					<div className='text-white bg-transparent text-sm ml-16 -mt-7'>
 						{description}
+					</div>
+					<div>
+						<Button />
 					</div>
 				</div>
 			</div>
 			<div className='flex flex-col space-y-2 ml-6'>
 				<div className='text-myblue font-bold mb-6'> How to reach me: </div>
 				<div className='font-bold'>Cell:</div>
-				<div className='text-mygrey text-sm'>{cell}</div>
+				<div className='text-mygrey dark:text-blue-100 text-sm'>{cell}</div>
 				<div className='font-bold'>Git:</div>
 				<a
 					href={git}
 					target='_blank'
 					rel='noopener noreferrer'
-					className='text-mygrey underline text-sm hover:text-mygreen'
+					className='text-mygrey dark:text-green-100 underline text-sm dark:hover:text-mygreen hover:text-mygreen'
 				>
 					{git}
 				</a>
@@ -44,12 +48,12 @@ const Info = () => {
 					href={linkedinLink}
 					target='_blank'
 					rel='noopener noreferrer'
-					className='text-mygrey underline text-sm hover:text-myblue'
+					className='text-mygrey dark:text-blue-100 underline text-sm dark:hover:text-myblue hover:text-myblue'
 				>
 					{linkedin}
 				</a>
 				<div className='font-bold'>Address:</div>
-				<div className='text-mygrey text-sm'>{address}</div>
+				<div className='text-mygrey dark:text-blue-100 text-sm'>{address}</div>
 			</div>
 		</div>
 	)
