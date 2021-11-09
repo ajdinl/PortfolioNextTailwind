@@ -53,7 +53,7 @@ const Info = () => {
 					href={website}
 					target='_blank'
 					rel='noopener noreferrer'
-					className='text-mygrey dark:text-green-100 underline text-sm dark:hover:text-mygreen hover:text-mygreen'
+					className='text-mygrey dark:text-red-100 underline text-sm dark:hover:text-green-300 hover:text-green-300'
 				>
 					{website}
 				</a>
