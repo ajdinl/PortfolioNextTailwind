@@ -1,10 +1,18 @@
 import Image from 'next/image'
 import user from '../../data/user.json'
-import Button from './Button'
 
 const Info = () => {
-	const { fullName, description, cell, git, linkedin, linkedinLink, address } =
-		user.info
+	const {
+		fullName,
+		description,
+		cell,
+		git,
+		website,
+		email,
+		linkedin,
+		linkedinLink,
+		address,
+	} = user.info
 
 	return (
 		<div className='flex flex-col mt-0.5'>
@@ -25,9 +33,6 @@ const Info = () => {
 					<div className='text-white bg-transparent text-sm ml-16 -mt-7'>
 						{description}
 					</div>
-					<div>
-						<Button />
-					</div>
 				</div>
 			</div>
 			<div className='flex flex-col space-y-2 ml-6'>
@@ -43,6 +48,19 @@ const Info = () => {
 				>
 					{git}
 				</a>
+				<div className='font-bold'>Web:</div>
+				<a
+					href={website}
+					target='_blank'
+					rel='noopener noreferrer'
+					className='text-mygrey dark:text-green-100 underline text-sm dark:hover:text-mygreen hover:text-mygreen'
+				>
+					{website}
+				</a>
+				<div className='font-bold'>Email:</div>
+				<div className='text-mygrey dark:text-blue-100 text-sm underline dark:hover:text-yellow-600 hover:text-yellow-600'>
+					<a href={'mailto:' + email}>{email}</a>
+				</div>
 				<div className='font-bold'>Linkedin:</div>
 				<a
 					href={linkedinLink}
@@ -52,7 +70,7 @@ const Info = () => {
 				>
 					{linkedin}
 				</a>
-				<div className='font-bold'>Address:</div>
+				<div className='font-bold'>Country - City:</div>
 				<div className='text-mygrey dark:text-blue-100 text-sm'>{address}</div>
 			</div>
 		</div>

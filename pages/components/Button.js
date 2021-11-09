@@ -5,7 +5,8 @@ const Button = () => {
 	const { theme, setTheme } = useTheme()
 
 	return (
-		<div className='-ml-14'>
+		<div className='flex flex-row space-x-2 text-sm absolute top-20 left-2/3'>
+			<div>Theme to:</div>
 			{theme === 'dark' ? (
 				<button onClick={() => setTheme('light')}>
 					<SunIcon className='h-5 w-5 text-yellow-500' />
