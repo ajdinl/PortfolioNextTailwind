@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import Career from './components/Career'
-import Info from './components/Info'
-import Personal from './components/Personal'
-import Button from './components/Button'
+import Career from '../components/Career'
+import Info from '../components/Info'
+import Personal from '../components/Personal'
+import Button from '../components/Button'
 
 export default function Home() {
 	return (

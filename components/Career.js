@@ -1,4 +1,4 @@
-import user from '../../data/user.json'
+import user from '../data/user.json'
 
 const Career = () => {
 	const { employer1, employer2 } = user.career

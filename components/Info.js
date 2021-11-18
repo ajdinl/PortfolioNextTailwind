@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import user from '../../data/user.json'
+import user from '../data/user.json'
 
 const Info = () => {
 	const {
@@ -27,12 +27,12 @@ const Info = () => {
 					/>
 				</div>
 				<div className='flex flex-row flex-wrap -mt-10 w-60 h-40 bg-myblue rounded-2xl mb-10 justift-center'>
-					<div className='text-2xl font-heboo font-extrabold ml-14 pt-12 bg-transparent'>
+					<h1 className='text-2xl font-heboo font-extrabold ml-14 pt-12 bg-transparent'>
 						{fullName}
-					</div>
-					<div className='text-white bg-transparent text-sm ml-16 -mt-7'>
+					</h1>
+					<h3 className='text-white bg-transparent text-sm ml-16 -mt-7'>
 						{description}
-					</div>
+					</h3>
 				</div>
 			</div>
 			<div className='flex flex-col space-y-2 ml-6'>
