@@ -1,19 +1,20 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-	mode: 'jit',
-	purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-	darkMode: 'class', // or 'media' or 'class'
-	theme: {
-		extend: {
-			colors: {
-				mybackground: '#efefef',
-				myblue: '#38b6ff',
-				mygreen: '#008037',
-				mygrey: '#5b5e66',
-			},
-		},
-	},
-	variants: {
-		extend: {},
-	},
-	plugins: [],
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+  ],
+  darkMode: 'class', // or 'media' or 'class'
+  theme: {
+    extend: {
+      colors: {
+        mybackground: '#efefef',
+        myblue: '#38b6ff',
+        mygreen: '#005C28',
+        mygrey: '#5b5e66',
+        mygreytwo: '#3C3E43',
+      },
+    },
+  },
+  plugins: [],
 }
