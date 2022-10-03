@@ -13,17 +13,15 @@ const Button = () => {
     <div className='flex flex-row items-center space-x-2 text-sm absolute top-20 left-1/3 sm:left-2/3'>
       <div className='dark:text-[#9c9ea3]'>Change theme to:</div>
 
-      <div
-        className='w-10 h-4 flex items-center bg-gray-300 rounded-full'
-        onClick={() => {
-          setToggle(!toggle)
-        }}
-      >
+      <div className='w-10 h-4 flex items-center bg-gray-300 rounded-full'>
         <div
           className={
             'md:w-6 md:h-6 h-5 w-5 rounded-full bg-myblue shadow-md transform' +
             (toggle ? null : toggleClass)
           }
+          onClick={() => {
+            setToggle(!toggle)
+          }}
         >
           {theme === 'dark' ? (
             <button aria-label='toggle' onClick={() => setTheme('light')}>
