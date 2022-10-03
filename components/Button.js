@@ -26,7 +26,7 @@ const Button = () => {
           }
         >
           {theme === 'dark' ? (
-            <button onClick={() => setTheme('light')}>
+            <button id='toggle theme' onClick={() => setTheme('light')}>
               <SunIcon className='h-5 w-5 mt-0 sm:mt-0.5 ml-0 sm:ml-0.5 text-yellow-500' />
             </button>
           ) : (

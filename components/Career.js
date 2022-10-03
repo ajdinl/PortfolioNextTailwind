@@ -52,7 +52,7 @@ const Career = () => {
               <div className='bg-white text-black'>{employer3.employer}</div>
               <div className='bg-white text-black'>{employer3.period}</div>
             </div>
-            <button onClick={() => setToggle(!toggle)}>
+            <button id='toggle details' onClick={() => setToggle(!toggle)}>
               {toggle ? (
                 <div className='ml-4 bg-white'>
                   <ul className='list-disc mb-4'>
