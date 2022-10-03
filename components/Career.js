@@ -52,7 +52,10 @@ const Career = () => {
               <div className='bg-white text-black'>{employer3.employer}</div>
               <div className='bg-white text-black'>{employer3.period}</div>
             </div>
-            <button aria-label='toggle' onClick={() => setToggle(!toggle)}>
+            <button
+              aria-label='toggle details'
+              onClick={() => setToggle(!toggle)}
+            >
               {toggle ? (
                 <div className='ml-4 bg-white'>
                   <ul className='list-disc mb-4'>

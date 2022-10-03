@@ -24,11 +24,11 @@ const Button = () => {
           }}
         >
           {theme === 'dark' ? (
-            <button aria-label='toggle' onClick={() => setTheme('light')}>
+            <button aria-label='toggle theme' onClick={() => setTheme('light')}>
               <SunIcon className='h-5 w-5 mt-0 sm:mt-0.5 ml-0 sm:ml-0.5 text-yellow-500' />
             </button>
           ) : (
-            <button onClick={() => setTheme('dark')}>
+            <button aria-label='toggle theme' onClick={() => setTheme('dark')}>
               <MoonIcon className='h-5 w-5 mt-0 sm:mt-0.5 ml-0 sm:ml-0.5 text-black' />
             </button>
           )}
