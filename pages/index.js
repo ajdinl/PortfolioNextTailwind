@@ -30,13 +30,11 @@ export default function Home({ data }) {
 }
 
 export async function getStaticProps() {
-  if (global.window) {
-    const res = await fetch(`${process.env.VERCEL_URL}api/data`)
-  } else {
-    const res = await fetch('http://localhost:3000/api/data')
-    const data = await res.json()
-    return {
-      props: { data },
-    }
+  const res = await fetch(
+    'https://my-json-server.typicode.com/ajdinl/PortfolioNextTailwind/db'
+  )
+  const data = await res.json()
+  return {
+    props: { data },
   }
 }
