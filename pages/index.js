@@ -4,7 +4,7 @@ import Button from '../components/Button'
 import Personal from '../components/Personal'
 import Career from '../components/Career'
 
-export default function Home() {
+export default function Home({ data }) {
   return (
     <>
       <Head>
@@ -21,10 +21,18 @@ export default function Home() {
       </Head>
       <Button />
       <div className='flex flex-row flex-wrap dark:bg-[#252525] pt-36 space-y-6 space-x-0 sm:space-x-6 justify-center min-h-screen bg-mybackground '>
-        <Info />
-        <Personal />
-        <Career />
+        <Info infoData={data.info} />
+        <Personal personalData={data.personal} />
+        <Career careerData={data.career} />
       </div>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const res = await fetch('http://localhost:3000/api/data')
+  const data = await res.json()
+  return {
+    props: { data },
+  }
 }

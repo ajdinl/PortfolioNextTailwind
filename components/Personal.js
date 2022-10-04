@@ -1,8 +1,6 @@
-import user from '../data/user.json'
-
-const Personal = () => {
+const Personal = ({ personalData }) => {
   const { profile, languages, more, other, personalities, hobbies } =
-    user.personal
+    personalData
 
   return (
     <div className='flex flex-col pt-2'>

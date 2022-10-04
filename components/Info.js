@@ -1,7 +1,6 @@
 import Image from 'next/image'
-import user from '../data/user.json'
 
-const Info = () => {
+const Info = ({ infoData }) => {
   const {
     fullName,
     description,
@@ -12,7 +11,7 @@ const Info = () => {
     linkedin,
     linkedinLink,
     address,
-  } = user.info
+  } = infoData
 
   return (
     <div className='flex flex-col mt-0.5'>

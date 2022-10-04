@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import user from '../data/user.json'
 
-const Career = () => {
+const Career = ({ careerData }) => {
   const [toggle, setToggle] = useState(false)
-  const { employer1, employer2, employer3 } = user.career
+  const { employer1, employer2, employer3 } = careerData
 
   return (
     <div className='flex flex-col pt-2'>
