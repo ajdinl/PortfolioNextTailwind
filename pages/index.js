@@ -30,7 +30,7 @@ export default function Home({ data }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch('http://127.0.0.1:3000/api/data')
+  const res = await fetch('https://ajdinlojic.vercel.app/api/data')
   const data = await res.json()
   return {
     props: { data },
