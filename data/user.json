@@ -23,8 +23,8 @@
     ],
     "hobbies": ["Motorcycling", "Skiing", "CryptoCurrency"]
   },
-  "career": {
-    "employer1": {
+  "career": [
+    {
       "headline": "Front-end developer",
       "employer": "Experfy",
       "period": "Feb 2022 to present",
@@ -34,7 +34,7 @@
         "Integrating data from various back-end services and databases"
       ]
     },
-    "employer2": {
+    {
       "headline": "Service Technician",
       "employer": "Xenon-forte d.o.o.",
       "period": "Jan 2021 to Nov 2021",
@@ -44,7 +44,7 @@
         "Installation and configuration of print / scan equipment, computers and more"
       ]
     },
-    "employer3": {
+    {
       "headline": "Administrative and technical assistant",
       "employer": "Accounting d.o.o.",
       "period": "Jan 2015 to Dec 2020",
@@ -54,5 +54,5 @@
         "Creating and posting documentation, keeping a budget and cash register table"
       ]
     }
-  }
+  ]
 }
