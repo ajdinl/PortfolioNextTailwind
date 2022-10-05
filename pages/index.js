@@ -30,7 +30,7 @@ export default function Home({ data }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(process.env.VERCEL_URL)
+  const res = await fetch(`'${process.env.VERCEL_URL}'`)
   const data = await res.json()
   return {
     props: { data },
