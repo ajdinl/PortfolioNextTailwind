@@ -1,8 +1,10 @@
+'use client'
+
 import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import { MoonIcon, SunIcon } from '@heroicons/react/solid'
 
-const Button = () => {
+export default function Button() {
   const { theme, setTheme } = useTheme()
   const [toggle, setToggle] = useState(true)
   const toggleClass = 'transform translate-x-5'
@@ -37,5 +39,3 @@ const Button = () => {
     </div>
   )
 }
-
-export default Button

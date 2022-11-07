@@ -1,4 +1,4 @@
-const Personal = ({ personalData }) => {
+export default function Personal({ personalData }) {
   const { profile, languages, more, other, personalities, hobbies } =
     personalData
 
@@ -45,5 +45,3 @@ const Personal = ({ personalData }) => {
     </div>
   )
 }
-
-export default Personal

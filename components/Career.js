@@ -1,6 +1,8 @@
+'use client'
+
 import { useState } from 'react'
 
-const Career = ({ careerData }) => {
+export default function Career({ careerData }) {
   const [toggle, setToggle] = useState(false)
 
   return (
@@ -55,5 +57,3 @@ const Career = ({ careerData }) => {
     </div>
   )
 }
-
-export default Career

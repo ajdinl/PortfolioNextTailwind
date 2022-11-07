@@ -1,6 +1,7 @@
 import Image from 'next/image'
+import avatar from '../public/images/selfie.jpg'
 
-const Info = ({ infoData }) => {
+export default function Info({ infoData }) {
   const {
     fullName,
     description,
@@ -15,16 +16,16 @@ const Info = ({ infoData }) => {
 
   return (
     <div className='flex flex-col mt-0.5'>
-      <div className='ml-10'>
+      <div className='ml-10 z-50'>
         <Image
           className='rounded-full'
-          src='/images/selfie.jpg'
+          src={avatar}
           width={160}
           height={160}
           alt='myImage'
         />
       </div>
-      <div className='-mt-2'>
+      <div className='-mt-0.5'>
         <div className='flex flex-row flex-wrap -mt-8 w-60 h-40 bg-myblue rounded-2xl mb-10 justift-center bg-gradient-to-tr from-myblue to-green-100'>
           <h1 className='text-2xl text-mygreytwo font-heboo font-extrabold ml-14 pt-12 bg-transparent drop-shadow'>
             {fullName}
@@ -80,5 +81,3 @@ const Info = ({ infoData }) => {
     </div>
   )
 }
-
-export default Info
