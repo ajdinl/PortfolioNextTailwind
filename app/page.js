@@ -1,4 +1,4 @@
-import HomePage from './HomePage'
+import HomePage from '@components/HomePage'
 
 async function getData() {
   const res = await fetch(process.env.FETCH_URL)
