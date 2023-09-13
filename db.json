@@ -13,7 +13,7 @@
   "personal": {
     "profile": "I am a web developer with robust problem-solving skills. Self-taught\n\t\t\t\t\tin React and NextJS, with a desire for constant learning and problem-\n\t\t\t\t\tsolving.",
     "languages": "JavaScript, HTML/CSS",
-    "more": "ReactJS, NextJS, React Router, Redux, EmberJS, Ember-Data",
+    "more": "ReactJS, NextJS, React Router, Redux, EmberJS, EmberData",
     "other": "Tailwind CSS, Bootstrap, Adobe XD, Git, Visual Studio Code, Linux",
     "personalities": [
       "Accuracy",
@@ -27,7 +27,7 @@
     {
       "headline": "Front-end developer",
       "employer": "Experfy",
-      "period": "Feb 2022 to present",
+      "period": "Aug 2021 to Present",
       "obligations": [
         "Writing well designed, testable, efficient code by using best software development practices",
         "Creating website layout/user interfaces by using standard HTML/CSS practices",
@@ -37,7 +37,7 @@
     {
       "headline": "Service Technician",
       "employer": "Xenon-forte d.o.o.",
-      "period": "Jan 2021 to Nov 2021",
+      "period": "Oct 2020 to Aug 2021",
       "obligations": [
         "Troubleshooting hardware and software",
         "Printer and computer diagnostic and service",
@@ -47,7 +47,7 @@
     {
       "headline": "Administrative and technical assistant",
       "employer": "Accounting d.o.o.",
-      "period": "Jan 2015 to Dec 2020",
+      "period": "Jan 2015 to Oct 2020",
       "obligations": [
         "Coordinating and performing administrative tasks",
         "Provide operational support to the team",
