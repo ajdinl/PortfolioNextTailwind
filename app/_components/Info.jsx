@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import avatar from '../public/images/selfie.jpg'
+import avatar from '../../public/images/selfie.jpg'
 
 export default function Info({ infoData }) {
   const {
