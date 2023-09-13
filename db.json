@@ -13,7 +13,7 @@
   "personal": {
     "profile": "I am a web developer with robust problem-solving skills. Self-taught\n\t\t\t\t\tin React and NextJS, with a desire for constant learning and problem-\n\t\t\t\t\tsolving.",
     "languages": "JavaScript, HTML/CSS",
-    "more": "ReactJS, NextJS, React Router, Redux, EmberJS, Ember-Data",
+    "more": "ReactJS, NextJS, React Router, Redux, EmberJS, EmberData",
     "other": "Tailwind CSS, Bootstrap, Adobe XD, Git, Visual Studio Code, Linux",
     "personalities": [
       "Accuracy",
