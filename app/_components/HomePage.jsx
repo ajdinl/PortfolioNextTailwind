@@ -1,9 +1,9 @@
 'use client'
 
-import Button from '@components/Button'
-import Info from '@components/Info'
-import Personal from '@components/Personal'
-import Career from '@components/Career'
+import Button from 'app/_components/Button'
+import Info from 'app/_components/Info'
+import Personal from 'app/_components/Personal'
+import Career from 'app/_components/Career'
 import { ThemeProvider } from 'next-themes'
 
 export default function HomePage({ data }) {
