@@ -86,9 +86,9 @@ export default function Info({ infoData }) {
           href='/Ajdin_Lojic_CV.pdf'
           target='_blank'
           rel='noopener noreferrer'
-          className='flex justify-center items-center h-12 w-48 rounded-lg bg-myblue drop-shadow-lg animate-bounce hover:animate-none duration-[400ms] text-white hover:text-gray-800 text-sm'
+          className='flex justify-center items-center h-12 w-48 rounded-lg bg-myblue drop-shadow-lg'
         >
-          here!
+          <span className='animate-pulse-text text-md'>here!</span>
         </a>
       </div>
     </div>
