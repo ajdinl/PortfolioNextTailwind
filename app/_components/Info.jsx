@@ -27,10 +27,10 @@ export default function Info({ infoData }) {
       </div>
       <div className='-mt-0.5'>
         <div className='flex flex-row flex-wrap -mt-8 w-60 h-40 bg-myblue rounded-2xl mb-10 justift-center bg-gradient-to-tr from-myblue to-green-100'>
-          <h1 className='text-2xl text-mygreytwo font-heboo font-extrabold ml-14 pt-12 bg-transparent drop-shadow'>
+          <h1 className='text-2xl text-mygraytwo font-heboo font-extrabold ml-14 pt-12 bg-transparent drop-shadow'>
             {fullName}
           </h1>
-          <p className='text-mygrey bg-transparent text-sm ml-16 -mt-7 drop-shadow'>
+          <p className='text-mygray bg-transparent text-sm ml-16 -mt-7 drop-shadow'>
             {description}
           </p>
         </div>
@@ -43,13 +43,13 @@ export default function Info({ infoData }) {
           How to reach me:
         </div>
         <div className='font-bold dark:text-white'>Cell:</div>
-        <div className='dark:text-blue-100 text-mygrey text-sm'>{cell}</div>
+        <div className='dark:text-blue-100 text-mygray text-sm'>{cell}</div>
         <div className='font-bold dark:text-white'>Git:</div>
         <a
           href={git}
           target='_blank'
           rel='noopener noreferrer'
-          className='dark:text-green-100 text-mygrey underline text-sm hover:text-mygreen'
+          className='dark:text-green-100 text-mygray underline text-sm hover:text-mygreen'
         >
           {git}
         </a>
@@ -58,12 +58,12 @@ export default function Info({ infoData }) {
           href={website}
           target='_blank'
           rel='noopener noreferrer'
-          className='dark:text-red-100 text-mygrey underline text-sm hover:text-orange-400'
+          className='dark:text-red-100 text-mygray underline text-sm hover:text-orange-400'
         >
           {website}
         </a>
         <div className='font-bold dark:text-white'>Email:</div>
-        <div className='dark:text-purple-100 text-mygrey text-sm underline hover:text-purple-400'>
+        <div className='dark:text-purple-100 text-mygray text-sm underline hover:text-purple-400'>
           <a href={'mailto:' + email}>{email}</a>
         </div>
         <div className='font-bold dark:text-white'>Linkedin:</div>
@@ -71,12 +71,25 @@ export default function Info({ infoData }) {
           href={linkedinLink}
           target='_blank'
           rel='noopener noreferrer'
-          className='dark:text-blue-100 text-mygrey underline text-sm hover:text-myblue'
+          className='dark:text-blue-100 text-mygray underline text-sm hover:text-myblue'
         >
           {linkedin}
         </a>
         <div className='font-bold dark:text-white'>Country - City:</div>
-        <div className='dark:text-blue-100 text-mygrey text-sm'>{address}</div>
+        <div className='dark:text-blue-100 text-mygray text-sm'>{address}</div>
+      </div>
+      <div className='flex flex-col justify-center items-center ml-6 mt-8'>
+        <span className='text-gray text-sm mb-2 font-bold'>
+          You can download my resume
+        </span>
+        <a
+          href='/Ajdin_Lojic_CV.pdf'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='flex justify-center items-center h-12 w-48 rounded-lg bg-myblue drop-shadow-lg animate-bounce hover:animate-none duration-[400ms] text-white hover:text-gray-800 text-sm'
+        >
+          here!
+        </a>
       </div>
     </div>
   )
