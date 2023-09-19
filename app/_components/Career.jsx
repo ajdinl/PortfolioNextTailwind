@@ -10,7 +10,7 @@ export default function Career({ careerData }) {
       <div className='bg-white p-6 w-64 h-auto rounded-2xl -mt-10 md:mt-24 mb-6'>
         <div className='text-mygreen font-bold mb-4'>Career Summary</div>
 
-        <div className='text-mygrey text-md'>
+        <div className='text-mygray text-md'>
           {careerData.map((item, index) => (
             <div className='text-sm' key={index}>
               <div className='font-bold text-black mb-1'>{item.headline}</div>
