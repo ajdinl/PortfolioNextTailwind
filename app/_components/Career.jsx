@@ -6,8 +6,8 @@ export default function Career({ careerData }) {
   const [toggle, setToggle] = useState(false)
 
   return (
-    <div className='flex flex-col pt-2'>
-      <div className='bg-white p-6 w-64 h-auto rounded-2xl -mt-10 md:mt-24 mb-6'>
+    <div className='flex flex-col pt-2 hover:scale-105'>
+      <div className='bg-white p-6 w-64 h-auto rounded-2xl -mt-10 md:mt-24 mb-6 drop-shadow-md'>
         <div className='text-mygreen font-bold mb-4'>Career Summary</div>
 
         <div className='text-mygray text-md'>
