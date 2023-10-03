@@ -26,7 +26,7 @@ export default function Info({ infoData }) {
         />
       </div>
       <div className='-mt-0.5'>
-        <div className='flex flex-col flex-wrap justify-center text-center -mt-8 w-96 lg:w-64 h-40 bg-myblue rounded-2xl mb-10 bg-gradient-to-tr from-myblue to-green-100 drop-shadow-md'>
+        <div className='flex flex-col flex-wrap justify-center text-center -mt-8 w-[510px] lg:w-64 h-40 bg-myblue rounded-2xl mb-10 bg-gradient-to-tr from-myblue to-green-100 drop-shadow-md'>
           <h1 className='  text-mygraytwo lg:text-xl font-heboo font-extrabold bg-transparent drop-shadow mb-2'>
             {fullName}
           </h1>
