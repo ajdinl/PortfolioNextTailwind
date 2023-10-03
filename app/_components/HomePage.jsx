@@ -12,7 +12,7 @@ export default function HomePage({ data }) {
   return (
     <ThemeProvider attribute='class'>
       <Button />
-      <div className='flex flex-row flex-wrap dark:bg-[#252525] pt-36 space-y-6 space-x-0 sm:space-x-6 justify-center min-h-screen bg-mybackground '>
+      <div className='grid lg:grid-cols-3 w-full justify-center text-2xl min-h-screen lg:text-base dark:bg-[#252525] bg-mybackground'>
         <Info infoData={info} />
         <Personal personalData={personal} />
         <Career careerData={career} />

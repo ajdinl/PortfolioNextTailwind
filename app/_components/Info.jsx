@@ -15,8 +15,8 @@ export default function Info({ infoData }) {
   } = infoData
 
   return (
-    <div className='flex flex-col mt-0.5'>
-      <div className='ml-10 z-50'>
+    <div className='flex flex-col lg:items-center mt-0.5'>
+      <div className='z-50 mx-auto'>
         <Image
           className='rounded-full drop-shadow-md'
           src={avatar}
@@ -26,16 +26,16 @@ export default function Info({ infoData }) {
         />
       </div>
       <div className='-mt-0.5'>
-        <div className='flex flex-row flex-wrap -mt-8 w-60 h-40 bg-myblue rounded-2xl mb-10 justift-center bg-gradient-to-tr from-myblue to-green-100 drop-shadow-md'>
-          <h1 className='text-2xl text-mygraytwo font-heboo font-extrabold ml-14 pt-12 bg-transparent drop-shadow'>
+        <div className='flex flex-col flex-wrap justify-center text-center -mt-8 w-96 lg:w-64 h-40 bg-myblue rounded-2xl mb-10 bg-gradient-to-tr from-myblue to-green-100 drop-shadow-md'>
+          <h1 className='  text-mygraytwo lg:text-xl font-heboo font-extrabold bg-transparent drop-shadow mb-2'>
             {fullName}
           </h1>
-          <p className='text-mygray bg-transparent text-sm ml-16 -mt-7 drop-shadow'>
+          <p className='text-mygray bg-transparent text-lg lg:text-sm drop-shadow'>
             {description}
           </p>
         </div>
       </div>
-      <div className='flex flex-col space-y-2 ml-6'>
+      <div className='flex flex-col p-6 space-y-2'>
         <div
           className='text-mygreen font-bold mb-6 drop-shadow-md
         dark:text-white'
@@ -43,13 +43,15 @@ export default function Info({ infoData }) {
           How to reach me:
         </div>
         <div className='font-bold dark:text-white drop-shadow-md'>Cell:</div>
-        <div className='dark:text-blue-100 text-mygray text-sm'>{cell}</div>
+        <div className='dark:text-blue-100 text-mygray text-xl lg:text-sm'>
+          {cell}
+        </div>
         <div className='font-bold dark:text-white drop-shadow-md'>Git:</div>
         <a
           href={git}
           target='_blank'
           rel='noopener noreferrer'
-          className='dark:text-green-100 text-mygray underline text-sm hover:text-mygreen'
+          className='dark:text-green-100 text-mygray underline text-xl lg:text-sm hover:text-mygreen'
         >
           {git}
         </a>
@@ -58,12 +60,12 @@ export default function Info({ infoData }) {
           href={website}
           target='_blank'
           rel='noopener noreferrer'
-          className='dark:text-red-100 text-mygray underline text-sm hover:text-orange-400'
+          className='dark:text-red-100 text-mygray underline text-xl lg:text-sm hover:text-orange-400'
         >
           {website}
         </a>
         <div className='font-bold dark:text-white drop-shadow-md'>Email:</div>
-        <div className='dark:text-purple-100 text-mygray text-sm underline hover:text-purple-400'>
+        <div className='dark:text-purple-100 text-mygray text-xl lg:text-sm underline hover:text-purple-400'>
           <a href={'mailto:' + email}>{email}</a>
         </div>
         <div className='font-bold dark:text-white drop-shadow-md'>
@@ -73,26 +75,28 @@ export default function Info({ infoData }) {
           href={linkedinLink}
           target='_blank'
           rel='noopener noreferrer'
-          className='dark:text-blue-100 text-mygray underline text-sm hover:text-myblue'
+          className='dark:text-blue-100 text-mygray underline text-xl lg:text-sm hover:text-myblue'
         >
           {linkedin}
         </a>
         <div className='font-bold dark:text-white drop-shadow-md'>
           Country - City:
         </div>
-        <div className='dark:text-blue-100 text-mygray text-sm'>{address}</div>
+        <div className='dark:text-blue-100 text-mygray text-xl lg:text-sm'>
+          {address}
+        </div>
       </div>
-      <div className='flex flex-col justify-center items-center ml-6 mt-8'>
-        <span className='text-gray text-sm mb-2 font-bold drop-shadow-md'>
+      <div className='flex flex-col justify-center text-center items-center mt-8'>
+        <span className='text-gray text-xl lg:text-sm mb-2 font-bold drop-shadow-md'>
           You can download my resume
         </span>
         <a
           href='/Ajdin_Lojic_CV.pdf'
           target='_blank'
           rel='noopener noreferrer'
-          className='flex justify-center items-center h-12 w-48 rounded-lg bg-myblue drop-shadow-md hover:brightness-105'
+          className='flex justify-center items-center w-48 h-12 rounded-lg bg-myblue drop-shadow-md hover:brightness-105'
         >
-          <span className='text-md text-white'>here!</span>
+          <span className='  text-white'>here!</span>
         </a>
       </div>
     </div>
