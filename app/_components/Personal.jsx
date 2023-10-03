@@ -4,11 +4,11 @@ export default function Personal({ personalData }) {
 
   return (
     <div className='flex flex-col lg:pt-4 lg:items-center'>
-      <div className='bg-white p-6 w-96 lg:w-64 mt-10 lg:mt-28 rounded-2xl drop-shadow-md'>
+      <div className='bg-white p-6 w-[510px] lg:w-64 mt-10 lg:mt-28 rounded-2xl drop-shadow-md'>
         <div className='text-mygreen font-bold mb-4'>Personal Profile</div>
         <div className='text-mygray  '>{profile}</div>
       </div>
-      <div className='bg-white p-6 w-96 lg:w-64 mt-8 rounded-2xl drop-shadow-md'>
+      <div className='bg-white p-6 w-[510px] lg:w-64 mt-8 rounded-2xl drop-shadow-md'>
         <div className='text-mygreen font-bold mb-4'>Skills</div>
         <div className='text-mygray text-xl lg:text-sm'>
           <div className='font-bold text-black'>Coding Languages:</div>
@@ -19,7 +19,7 @@ export default function Personal({ personalData }) {
           <div className='mt-1'>{other}</div>
         </div>
       </div>
-      <div className='bg-white p-6 w-96 lg:w-64 mt-8 mb-10 rounded-2xl drop-shadow-md'>
+      <div className='bg-white p-6 w-[510px] lg:w-64 mt-8 mb-10 rounded-2xl drop-shadow-md'>
         <div className='text-mygreen font-bold mb-4'>About me</div>
         <div className='text-mygray text-xl lg:text-sm'>
           <div className='font-bold text-black mb-1'>Personalities:</div>

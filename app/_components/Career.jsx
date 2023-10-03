@@ -7,7 +7,7 @@ export default function Career({ careerData }) {
 
   return (
     <div className='flex flex-col lg:items-center lg:pt-4 hover:scale-105'>
-      <div className='bg-white p-6 w-96 lg:w-64 h-auto lg:mt-28 rounded-2xl mb-6 drop-shadow-md'>
+      <div className='bg-white p-6 w-[510px] lg:w-64 h-auto lg:mt-28 rounded-2xl mb-6 drop-shadow-md'>
         <div className='text-mygreen font-bold mb-4'>Career Summary</div>
 
         <div className='text-mygray  '>
