@@ -3,7 +3,7 @@
 import { useState } from 'react'
 
 export default function Career({ careerData }) {
-  const [toggle, setToggle] = useState(false)
+  const [toggle, setToggle] = useState(true)
 
   return (
     <div className='flex flex-col lg:items-center lg:pt-4 hover:scale-105'>
