@@ -17,6 +17,11 @@ export default function HomePage({ data }) {
         <Personal personalData={personal} />
         <Career careerData={career} />
       </div>
+      <div className='grid lg:grid-cols-3 w-full justify-center text-2xl min-h-screen lg:text-base dark:bg-[#252525] bg-mybackground'>
+        <Info infoData={info} />
+        <Personal personalData={personal} />
+        <Career careerData={career} />
+      </div>
     </ThemeProvider>
   )
 }
