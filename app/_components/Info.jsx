@@ -86,19 +86,6 @@ export default function Info({ infoData }) {
           {address}
         </div>
       </div>
-      <div className='flex flex-col justify-center text-center items-center mt-8'>
-        <span className='text-gray text-xl lg:text-sm mb-2 font-bold drop-shadow-md'>
-          You can download my resume
-        </span>
-        <a
-          href='/Ajdin_Lojic_CV.pdf'
-          target='_blank'
-          rel='noopener noreferrer'
-          className='flex justify-center items-center w-48 h-12 rounded-lg bg-myblue drop-shadow-md hover:brightness-105'
-        >
-          <span className='  text-white'>here!</span>
-        </a>
-      </div>
     </div>
   )
 }
