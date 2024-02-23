@@ -29,9 +29,13 @@
       "employer": "Experfy",
       "period": "Aug 2021 to Dec 2023",
       "obligations": [
-        "Writing well designed, testable, efficient code by using best software development practices",
-        "Creating website layout/user interfaces by using standard HTML/CSS practices",
-        "Integrating data from various back-end services and databases"
+        "Developing efficient and maintainable code using ReactJS, EmberJS, and NextJS for seamless client-side rendering and improved web application performance",
+        "Designing visually appealing website layouts and interfaces using HTML/CSS, with a focus on responsive design using Bootstrap and styling with Tailwind CSS",
+        "Integrating data from back-end services and databases, using SQL for database design, querying, and optimization",
+        "Collaborating with backend developers to optimize database performance and ensure smooth data integration with SQL databases",
+        "Contributing to best practices for version control using Git",
+        "Utilizing Adobe XD for prototyping and design collaboration",
+        "Using Linux to facilitate deployment and maintenance processes"
       ]
     },
     {
