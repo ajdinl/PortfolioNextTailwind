@@ -11,9 +11,9 @@
     "address": "Bosnia and Herzegovina, Sarajevo"
   },
   "personal": {
-    "profile": "I am a web developer with robust problem-solving skills. Self-taught\n\t\t\t\t\tin React and NextJS, with a desire for constant learning and problem-\n\t\t\t\t\tsolving.",
+    "profile": "I am a web developer with robust problem-solving skills. Self-taught\n\t\t\t\t\tin React and Node, with a desire for constant learning and problem-\n\t\t\t\t\tsolving.",
     "languages": "JavaScript, HTML/CSS",
-    "more": "ReactJS, NextJS, React Router, Redux, EmberJS, EmberData",
+    "more": "ReactJS, NextJS, Node, Express, React Router, Redux, EmberJS, EmberData",
     "other": "Tailwind CSS, Bootstrap, Adobe XD, SQL, Git, Visual Studio Code, Linux",
     "personalities": [
       "Accuracy",
@@ -25,37 +25,17 @@
   },
   "career": [
     {
-      "headline": "Front-end developer",
+      "headline": "Web developer",
       "employer": "Experfy",
       "period": "Aug 2021 to Dec 2023",
       "obligations": [
-        "Developing efficient and maintainable code using ReactJS, EmberJS, and NextJS for seamless client-side rendering and improved web application performance",
+        "Developing efficient and maintainable code using ReactJS, EmberJS, and NextJS for seamless client-side and server-side rendering, and improved web application performance",
         "Designing visually appealing website layouts and interfaces using HTML/CSS, with a focus on responsive design using Bootstrap and styling with Tailwind CSS",
         "Integrating data from back-end services and databases, using SQL for database design, querying, and optimization",
         "Collaborating with backend developers to optimize database performance and ensure smooth data integration with SQL databases",
         "Contributing to best practices for version control using Git",
         "Utilizing Adobe XD for prototyping and design collaboration",
         "Using Linux to facilitate deployment and maintenance processes"
-      ]
-    },
-    {
-      "headline": "Service Technician",
-      "employer": "Xenon-forte d.o.o.",
-      "period": "Oct 2020 to Aug 2021",
-      "obligations": [
-        "Troubleshooting hardware and software",
-        "Printer and computer diagnostic and service",
-        "Installation and configuration of print / scan equipment, computers and more"
-      ]
-    },
-    {
-      "headline": "Administrative and technical assistant",
-      "employer": "Accounting d.o.o.",
-      "period": "Jan 2015 to Oct 2020",
-      "obligations": [
-        "Coordinating and performing administrative tasks",
-        "Provide operational support to the team",
-        "Creating and posting documentation, keeping a budget and cash register table"
       ]
     }
   ]
