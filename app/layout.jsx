@@ -1,5 +1,4 @@
 import '@/styles/globals.css'
-import Head from 'next/head'
 
 export const metadata = {
   title: "Ajdin Lojic's Portfolio",
@@ -14,14 +13,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html suppressHydrationWarning>
-      <Head>
+      <head>
         <title>{metadata.title}</title>
         <meta name='description' content={metadata.description} />
         <meta name='keywords' content={metadata.keywords} />
         <meta name='author' content={metadata.author} />
         <meta name='google-site-verification' content={metadata.googleSiteVerification} />
         <link rel='icon' href={metadata.icon} />
-      </Head>
+      </head>
       <body>{children}</body>
     </html>
   )
