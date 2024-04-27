@@ -14,13 +14,8 @@
     "profile": "I am a web developer with robust problem-solving skills. Self-taught\n\t\t\t\t\tin React and Node, with a desire for constant learning and problem-\n\t\t\t\t\tsolving.",
     "languages": "JavaScript, HTML/CSS",
     "more": "ReactJS, NextJS, Node, Express, React Router, Redux, EmberJS, EmberData",
-    "other": "Tailwind CSS, Bootstrap, Adobe XD, SQL, Git, Visual Studio Code, Linux",
-    "personalities": [
-      "Accuracy",
-      "Organization",
-      "Creativity",
-      "Communication"
-    ],
+    "other": "Tailwind CSS, Material UI, Bootstrap, Adobe XD, SQL, NoSQL, Git, Visual Studio Code, Linux",
+    "personalities": ["Accuracy", "Organization", "Creativity", "Communication"],
     "hobbies": ["Motorcycling", "Skiing", "CryptoCurrency"]
   },
   "career": [
