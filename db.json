@@ -12,7 +12,7 @@
   },
   "personal": {
     "profile": "I am a web developer with robust problem-solving skills. Self-taught\n\t\t\t\t\tin React and Node, with a desire for constant learning and problem-\n\t\t\t\t\tsolving.",
-    "languages": "JavaScript, HTML/CSS",
+    "languages": "JavaScript, Typescript, HTML/CSS",
     "more": "ReactJS, NextJS, Node, Express, React Router, Redux, EmberJS, EmberData",
     "other": "Tailwind CSS, Material UI, Bootstrap, Adobe XD, SQL, NoSQL, Git, Visual Studio Code, Linux",
     "personalities": ["Accuracy", "Organization", "Creativity", "Communication"],
@@ -29,7 +29,7 @@
         "Integrating data from back-end services and databases, using SQL for database design, querying, and optimization",
         "Collaborating with backend developers to optimize database performance and ensure smooth data integration with SQL databases",
         "Contributing to best practices for version control using Git",
-        "Utilizing Adobe XD for prototyping and design collaboration",
+        "Utilizing Figma and Adobe XD for prototyping and design collaboration",
         "Using Linux to facilitate deployment and maintenance processes"
       ]
     }
