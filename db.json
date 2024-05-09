@@ -26,11 +26,11 @@
       "obligations": [
         "Developing efficient and maintainable code using ReactJS, EmberJS, and NextJS for seamless client-side and server-side rendering, and improved web application performance",
         "Designing visually appealing website layouts and interfaces using HTML/CSS, with a focus on responsive design using Bootstrap and styling with Tailwind CSS",
-        "Integrating data from back-end services and databases, using SQL for database design, querying, and optimization",
-        "Collaborating with backend developers to optimize database performance and ensure smooth data integration with SQL databases",
-        "Contributing to best practices for version control using Git",
+        "Optimizing web applications for improved performance and user experience, using modern techniques",
+        "Integrating data from back-end services and databases, focusing on efficient data handling and design",
+        "Collaborating with backend developers to ensure smooth data integration and optimize overall application performance",
         "Utilizing Adobe XD for prototyping and design collaboration",
-        "Using Linux to facilitate deployment and maintenance processes"
+        "Contributing to best practices for version control using Git"
       ]
     }
   ]
