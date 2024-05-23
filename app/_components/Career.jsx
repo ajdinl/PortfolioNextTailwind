@@ -7,14 +7,14 @@ export default function Career({ careerData }) {
         <div className='text-mygray'>
           {careerData.map((item, index) => (
             <div className='text-xl lg:text-sm space-y-2' key={index}>
-              <div className='font-bold text-black'>{item.headline}</div>
+              <div className='font-bold text-black mt-4'>{item.title}</div>
               <div>
                 <div className='font-bold text-gray-800'>{item.employer}</div>
                 <div className='text-gray-700'>{item.period}</div>
               </div>
               <div className='ml-4 bg-white'>
                 <ul className='list-disc'>
-                  {item.obligations.map((obligation, index) => (
+                  {item.details.map((obligation, index) => (
                     <li className='text-left' key={index}>
                       {obligation}
                     </li>

@@ -1,7 +1,7 @@
 {
   "info": {
     "fullName": "Ajdin Lojić",
-    "description": "Web developer",
+    "description": "Software Engineer",
     "cell": "+38761811375",
     "git": "https://github.com/ajdinl",
     "website": "https://ajdinlojic.vercel.app/",
@@ -20,10 +20,23 @@
   },
   "career": [
     {
-      "headline": "Web developer",
+      "title": "Software Engineer",
+      "employer": "Trinity",
+      "period": "Feb 2024 to Present",
+      "details": [
+        "Crafting robust and maintainable code using Typescript, React, and NextJS to ensure high performance in both client-side and server-side applications",
+        "Developing attractive and responsive website layouts with Material UI and Tailwind CSS for modern and consistent styling",
+        "Enhancing application performance and user experience through advanced optimization techniques",
+        "Integrating and managing data from backend services and databases with a strong focus on efficiency and scalability",
+        "Working closely with backend developers to ensure effective data integration and to streamline application functionality",
+        "Using Figma for design prototyping and collaboration, enabling clear and effective communication of design ideas"
+      ]
+    },
+    {
+      "title": "Software Developer",
       "employer": "Experfy",
       "period": "Aug 2021 to Dec 2023",
-      "obligations": [
+      "details": [
         "Developing efficient and maintainable code using ReactJS, EmberJS, and NextJS for seamless client-side and server-side rendering, and improved web application performance",
         "Designing visually appealing website layouts and interfaces using HTML/CSS, with a focus on responsive design using Bootstrap and styling with Tailwind CSS",
         "Optimizing web applications for improved performance and user experience, using modern techniques",
