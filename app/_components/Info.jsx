@@ -55,10 +55,6 @@ export default function Info({ infoData }) {
         <div className='dark:text-purple-100 text-mygray text-xl lg:text-sm underline hover:text-purple-400'>
           <a href={'mailto:' + email}>{email}</a>
         </div>
-        <div className='font-bold dark:text-white drop-shadow-md'>Cell:</div>
-        <div className='dark:text-blue-100 text-mygray text-xl lg:text-sm'>{cell}</div>
-        <div className='font-bold dark:text-white drop-shadow-md'>Country - City:</div>
-        <div className='dark:text-blue-100 text-mygray text-xl lg:text-sm'>{address}</div>
       </div>
     </div>
   )
