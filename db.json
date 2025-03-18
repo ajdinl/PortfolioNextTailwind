@@ -11,14 +11,14 @@
   "personal": {
     "profile": "I am a web developer with robust problem-solving skills. Self-taught\n\t\t\t\t\tin React and Node, with a desire for constant learning and problem-\n\t\t\t\t\tsolving.",
     "languages": "JavaScript, Typescript, HTML/CSS",
-    "more": "ReactJS, NextJS, Node, Express, React Router, Redux, EmberJS, EmberData",
-    "other": "Tailwind CSS, Material UI, Bootstrap, Figma, Adobe XD, SQL, NoSQL, Git, Visual Studio Code, Linux",
+    "more": "ReactJS, NextJS, Ruby on Rails, Node, Express, React Router, Redux, EmberJS, EmberData",
+    "other": "Tailwind CSS, Material UI, ChakraUI, Bootstrap, Figma, Adobe XD, SQL, NoSQL, Git, VS Code, Linux",
     "personalities": ["Accuracy", "Organization", "Creativity", "Communication"],
     "hobbies": ["Motorcycling", "Skiing", "CryptoCurrency"]
   },
   "career": [
     {
-      "title": "Full Stack Software Engineer",
+      "title": "Software Engineer",
       "employer": "Klika",
       "period": "Sep 2024 to Present",
       "details": [
