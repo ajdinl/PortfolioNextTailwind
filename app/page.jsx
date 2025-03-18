@@ -1,12 +1,6 @@
 import HomePage from '@components/HomePage'
+import db from '@/db.json'
 
-async function getData() {
-  const res = await fetch(process.env.FETCH_URL)
-  return res.json()
-}
-
-export default async function Page() {
-  const data = await getData()
-
-  return <HomePage data={data} />
+export default function Page() {
+  return <HomePage data={db} />
 }
