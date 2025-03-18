@@ -6,7 +6,7 @@
     "website": "https://ajdinlojic.vercel.app/",
     "email": "ajdinlojic@gmail.com",
     "linkedin": "@ajdinlojic",
-    "linkedinLink": "https://www.linkedin.com/in/ajdin-lojic/",
+    "linkedinLink": "https://www.linkedin.com/in/ajdin-lojic/"
   },
   "personal": {
     "profile": "I am a web developer with robust problem-solving skills. Self-taught\n\t\t\t\t\tin React and Node, with a desire for constant learning and problem-\n\t\t\t\t\tsolving.",
@@ -18,9 +18,34 @@
   },
   "career": [
     {
+      "title": "Full Stack Software Engineer",
+      "employer": "Klika",
+      "period": "Sep 2024 to Present",
+      "details": [
+        "Developing and maintaining a robust Ruby on Rails application with RESTful API endpoints, implementing advanced ActiveRecord relationships and complex business logic",
+        "Orchestrating sophisticated database operations, including SQL query optimization, background job processing with Sidekiq, and efficient cache management using Redis",
+        "Engineering modern React.js frontend solutions with ChakraUI, emphasizing atomic design principles and implementing custom hooks for shared business logic",
+        "Implementing comprehensive test coverage using RSpec for backend services and Jest/React Testing Library for frontend components",
+        "Architecting real-time features using Action Cable for WebSocket communications, enabling live updates and notifications across the application",
+        "Optimizing application performance through database indexing, query caching, and efficient frontend state management practices"
+      ]
+    },
+    {
+      "title": "Software Engineer",
+      "employer": "Scanspire",
+      "period": "Mar 2024 to Present",
+      "details": [
+        "Implementing dynamic web applications using React.js and Next.js, incorporating server-side rendering (SSR) and static site generation (SSG) for optimal performance",
+        "Building interactive user interfaces with jQuery and AJAX, enabling real-time data updates and seamless user experiences without page reloads",
+        "Developing responsive and mobile-first layouts using Bootstrap's grid system and components, ensuring cross-browser compatibility and accessibility",
+        "Leading the implementation of modern frontend practices, including component reusability, state management, and API integration patterns",
+        "Optimizing application performance through code splitting, lazy loading, and efficient data fetching strategies"
+      ]
+    },
+    {
       "title": "Software Engineer",
       "employer": "Trinity",
-      "period": "Feb 2024 to Present",
+      "period": "Feb 2024 to Aug 2024",
       "details": [
         "Crafting robust and maintainable code using Typescript, React, and NextJS to ensure high performance in both client-side and server-side applications",
         "Developing attractive and responsive website layouts with Material UI and Tailwind CSS for modern and consistent styling",
