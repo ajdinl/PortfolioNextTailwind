@@ -1,7 +1,7 @@
 export default function Career({ careerData }) {
   return (
-    <div className='flex flex-col lg:items-center lg:pt-4'>
-      <div className='bg-white p-6 w-[510px] lg:w-64 h-auto lg:mt-28 rounded-2xl mb-6 drop-shadow-md'>
+    <div className='flex flex-col items-center lg:pt-4'>
+      <div className='bg-white p-6 w-full max-w-[480px] lg:w-64 h-auto lg:mt-28 rounded-2xl mb-6 drop-shadow-md'>
         <div className='text-mygreen font-bold mb-4 flex items-center justify-between'>
           Career Summary
           {careerData.length > 1 && (
@@ -19,9 +19,9 @@ export default function Career({ careerData }) {
             </div>
           )}
         </div>
-        <div className='text-mygray max-h-[840px] overflow-y-auto pr-2 custom-scrollbar'>
+        <div className='text-mygray max-h-[460px] sm:max-h-[600px] lg:max-h-[840px] overflow-y-auto pr-2 custom-scrollbar'>
           {careerData.map((item, index) => (
-            <div className='text-xl lg:text-sm space-y-2' key={index}>
+            <div className='text-base lg:text-sm space-y-2' key={index}>
               <div className='font-bold text-black mt-4'>{item.title}</div>
               <div>
                 <div className='font-bold text-gray-800'>{item.employer}</div>
