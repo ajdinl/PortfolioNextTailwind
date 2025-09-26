@@ -4,15 +4,15 @@ export default function Personal({ personalData }) {
   return (
     <div className='flex flex-col items-center lg:pt-4'>
       <div className='bg-white p-6 w-full max-w-[480px] lg:w-64 mt-10 lg:mt-28 rounded-2xl drop-shadow-md'>
-        <div className='text-mygreen font-bold mb-4'>Personal Profile</div>
-        <div className='text-mygray'>{profile}</div>
+        <div className='text-mygreen font-bold mb-4'>About me</div>
+        <div className='text-mygray text-base lg:text-sm'>{profile}</div>
       </div>
       <div className='bg-white p-6 w-full max-w-[480px] lg:w-64 mt-8 rounded-2xl drop-shadow-md'>
         <div className='text-mygreen font-bold mb-4'>Skills</div>
         <div className='text-mygray text-base lg:text-sm'>
           <div className='font-bold text-black'>Coding Languages:</div>
           <div className='mb-3 mt-1'>{languages}</div>
-          <div className='font-bold text-black'>More JS:</div>
+          <div className='font-bold text-black'>Frameworks:</div>
           <div className='mb-3 mt-1'>{more}</div>
           <div className='font-bold text-black'>Other:</div>
           <div className='mt-1'>{other}</div>

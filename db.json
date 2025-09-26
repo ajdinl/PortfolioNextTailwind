@@ -9,64 +9,61 @@
     "linkedinLink": "https://www.linkedin.com/in/ajdin-lojic/"
   },
   "personal": {
-    "profile": "I am a web developer with robust problem-solving skills. Self-taught\n\t\t\t\t\tin React and Node, with a desire for constant learning and problem-\n\t\t\t\t\tsolving.",
-    "languages": "JavaScript, Typescript, HTML/CSS",
-    "more": "ReactJS, NextJS, Ruby on Rails, Node, Express, React Router, Redux, EmberJS, EmberData",
-    "other": "Tailwind CSS, Material UI, ChakraUI, Bootstrap, Figma, Adobe XD, SQL, NoSQL, Git, VS Code, Linux",
+    "profile": "Full Stack Developer with a passion for building scalable and efficient web applications. Proficient in frontend technologies such as HTML/CSS, JavaScript, Typescript, and frameworks/libraries like React and Next.js. Skilled in backend development using Ruby, Node.js, and frameworks including Ruby on Rails, Express, and Nest.js. Dedicated to delivering efficient and user-friendly solutions.",
+    "languages": "JavaScript, Typescript, HTML/CSS, Ruby, Node.js",
+    "more": "React, Next.js, Ruby on Rails, Express, Nest.js, React Router, Redux, Ember",
+    "other": "Material UI, Chakra UI, Tailwind CSS, Bootstrap, Figma, SQL, NoSQL, Git, VS Code/Cursor",
     "personalities": ["Accuracy", "Organization", "Creativity", "Communication"],
     "hobbies": ["Motorcycling", "Skiing", "CryptoCurrency"]
   },
   "career": [
     {
-      "title": "Software Engineer",
+      "title": "Software Engineer (Full Stack)",
       "employer": "Klika",
       "period": "Sep 2024 to Present",
       "details": [
-        "Developing and maintaining a robust Ruby on Rails application with RESTful API endpoints, implementing advanced ActiveRecord relationships and complex business logic",
-        "Orchestrating sophisticated database operations, including SQL query optimization, background job processing with Sidekiq, and efficient cache management using Redis",
-        "Engineering modern React.js frontend solutions with ChakraUI, emphasizing atomic design principles and implementing custom hooks for shared business logic",
-        "Implementing comprehensive test coverage using RSpec for backend services and Jest/React Testing Library for frontend components",
-        "Architecting real-time features using Action Cable for WebSocket communications, enabling live updates and notifications across the application",
-        "Optimizing application performance through database indexing, query caching, and efficient frontend state management practices"
+        "Developing and maintaining a full-stack Ruby on Rails application with RESTful APIs, advanced ActiveRecord associations, and complex business logic",
+        "Optimizing database performance through SQL query tuning, caching with Redis, and background job processing with Sidekiq",
+        "Building modern React frontend components with ChakraUI, applying atomic design principles and custom hooks",
+        "Implementing comprehensive test coverage using RSpec for backend and Jest/React Testing Library for frontend",
+        "Architecting real-time features with Action Cable for live updates and notifications",
+        "Enhancing overall application performance through database indexing, query optimization, and efficient frontend state management"
       ]
     },
     {
-      "title": "Software Engineer",
+      "title": "Software Engineer (Frontend)",
       "employer": "Scanspire",
       "period": "Mar 2024 to Present",
       "details": [
-        "Implementing dynamic web applications using React.js and Next.js, incorporating server-side rendering (SSR) and static site generation (SSG) for optimal performance",
-        "Building interactive user interfaces with jQuery and AJAX, enabling real-time data updates and seamless user experiences without page reloads",
-        "Developing responsive and mobile-first layouts using Bootstrap's grid system and components, ensuring cross-browser compatibility and accessibility",
-        "Leading the implementation of modern frontend practices, including component reusability, state management, and API integration patterns",
-        "Optimizing application performance through code splitting, lazy loading, and efficient data fetching strategies"
+        "Developed dynamic web applications using React/Next.js with server-side rendering (SSR) and static site generation (SSG) for optimal performance",
+        "Built interactive, real-time user interfaces with jQuery and AJAX",
+        "Created responsive, mobile-first layouts using Bootstrap, ensuring cross-browser compatibility",
+        "Implemented modern frontend practices including component reusability, state management, and API integration",
+        "Optimized application performance through code splitting, lazy loading, and efficient data fetching"
       ]
     },
     {
-      "title": "Software Engineer",
+      "title": "Software Engineer (Frontend)",
       "employer": "Trinity",
       "period": "Feb 2024 to Aug 2024",
       "details": [
-        "Crafting robust and maintainable code using Typescript, React, and NextJS to ensure high performance in both client-side and server-side applications",
-        "Developing attractive and responsive website layouts with Material UI and Tailwind CSS for modern and consistent styling",
-        "Enhancing application performance and user experience through advanced optimization techniques",
-        "Integrating and managing data from backend services and databases with a strong focus on efficiency and scalability",
-        "Working closely with backend developers to ensure effective data integration and to streamline application functionality",
-        "Using Figma for design prototyping and collaboration, enabling clear and effective communication of design ideas"
+        "Developed scalable web applications using TypeScript with React/Next.js, ensuring high performance in client-side and server-side rendering",
+        "Built responsive and consistent user interfaces with Material UI",
+        "Optimized application performance and user experience through advanced frontend techniques",
+        "Integrated backend services and collaborated with backend developers to ensure efficient data flow",
+        "Created UI prototypes and design handoffs in Figma for streamlined collaboration"
       ]
     },
     {
-      "title": "Software Developer",
+      "title": "Software Developer (Frontend)",
       "employer": "Experfy",
       "period": "Aug 2021 to Dec 2023",
       "details": [
-        "Developing efficient and maintainable code using ReactJS, EmberJS, and NextJS for seamless client-side and server-side rendering, and improved web application performance",
-        "Designing visually appealing website layouts and interfaces using HTML/CSS, with a focus on responsive design using Bootstrap and styling with Tailwind CSS",
-        "Optimizing web applications for improved performance and user experience, using modern techniques",
-        "Integrating data from back-end services and databases, focusing on efficient data handling and design",
-        "Collaborating with backend developers to ensure smooth data integration and optimize overall application performance",
-        "Utilizing Adobe XD for prototyping and design collaboration",
-        "Contributing to best practices for version control using Git"
+        "Developed and maintained front-end applications using ReactJS and EmberJS, ensuring seamless rendering and improved performance",
+        "Designed responsive user interfaces with HTML, CSS, and Bootstrap for cross-device compatibility",
+        "Optimized web applications for speed and user experience through modern frontend techniques",
+        "Integrated data from backend services and collaborated with backend developers to ensure smooth data flow",
+        "Created UI prototypes with Adobe XD and contributed to best practices in version control using Git"
       ]
     }
   ]
