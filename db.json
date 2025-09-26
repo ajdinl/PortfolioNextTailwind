@@ -12,7 +12,7 @@
     "profile": "Full Stack Developer with a passion for building scalable and efficient web applications. Proficient in frontend technologies such as HTML/CSS, JavaScript, Typescript, and frameworks/libraries like React and Next.js. Skilled in backend development using Ruby, Node.js, and frameworks including Ruby on Rails, Express, and Nest.js. Dedicated to delivering efficient and user-friendly solutions.",
     "languages": "JavaScript, Typescript, HTML/CSS, Ruby, Node.js",
     "more": "React, Next.js, Ruby on Rails, Express, Nest.js, React Router, Redux, Ember",
-    "other": "Material UI, Chakra UI, Tailwind CSS, Bootstrap, Figma, SQL, NoSQL, Git, VS Code/Cursor",
+    "other": "Material UI, Chakra UI, Tailwind CSS, Bootstrap, Figma, SQL, NoSQL, Git",
     "personalities": ["Accuracy", "Organization", "Creativity", "Communication"],
     "hobbies": ["Motorcycling", "Skiing", "CryptoCurrency"]
   },

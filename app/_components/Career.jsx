@@ -1,7 +1,7 @@
 export default function Career({ careerData }) {
   return (
-    <div className='flex flex-col items-center lg:pt-4'>
-      <div className='bg-white p-6 w-full max-w-[480px] lg:w-64 h-full lg:mt-28 rounded-2xl mb-10 drop-shadow-md'>
+    <div className='flex flex-col items-center'>
+      <div className='bg-white p-6 w-full h-full rounded-2xl mb-6 drop-shadow-md'>
         <div className='text-mygreen font-bold flex items-center justify-between'>
           Career Summary
           {careerData.length > 1 && (
