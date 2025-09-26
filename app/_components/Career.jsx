@@ -21,8 +21,8 @@ export default function Career({ careerData }) {
         </div>
         <div className='text-mygray max-h-[460px] sm:max-h-[600px] lg:max-h-[990px] overflow-y-auto pr-2 custom-scrollbar'>
           {careerData.map((item, index) => (
-            <div className='text-base lg:text-sm space-y-2' key={index}>
-              <div className='font-bold text-black mt-4'>{item.title}</div>
+            <div className='text-base lg:text-sm space-y-1' key={index}>
+              <div className='font-bold text-black mt-2'>{item.title}</div>
               <div>
                 <div className='font-bold text-gray-800'>{item.employer}</div>
                 <div className='text-gray-700'>{item.period}</div>

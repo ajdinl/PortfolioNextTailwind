@@ -72,16 +72,16 @@ export default function Info({ infoData, personalData }) {
         </div>
         <div className='bg-white p-6 rounded-2xl drop-shadow-md'>
           <div className='text-mygreen font-bold mb-2'>Qualities & Hobbies</div>
-          <div className='text-mygray text-base lg:text-sm'>
-            <div className='font-bold text-black mb-1'>Personalities:</div>
+          <div className='text-mygray text-base lg:text-sm space-y-1'>
+            <div className='font-bold text-black'>Personalities:</div>
             <div className='ml-4'>
-              <ul className='list-disc mb-4'>
+              <ul className='list-disc'>
                 {personalities.map((personality, index) => (
                   <li key={index}>{personality}</li>
                 ))}
               </ul>
             </div>
-            <div className='font-bold text-black mb-1'>Hobby:</div>
+            <div className='font-bold text-black'>Hobby:</div>
             <div className='ml-4'>
               <ul className='list-disc'>
                 {hobbies.map((hobby, index) => (
