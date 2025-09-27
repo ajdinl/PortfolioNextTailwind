@@ -12,7 +12,7 @@ export default function Button() {
   useEffect(() => setTheme('light'), [setTheme])
 
   return (
-    <div className='flex flex-row items-center space-x-2 text-base lg:text-sm pt-6 pb-6 lg:pt-8 lg:pb-8 mt-4 lg:mt-0 justify-end dark:bg-[#252525] bg-mybackground'>
+    <div className='flex flex-row items-center space-x-2 text-base lg:text-sm mb-6 justify-end dark:bg-[#252525] bg-mybackground'>
       <div className='dark:text-[#9c9ea3] font-bold drop-shadow-md hidden lg:block'>Change theme to:</div>
       <div className='w-10 h-4 flex items-center bg-gray-300 rounded-full drop-shadow-md'>
         <div
