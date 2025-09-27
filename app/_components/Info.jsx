@@ -1,8 +1,5 @@
-import Image from 'next/image'
-import avatar from '@/public/images/selfie.jpg'
-
 export default function Info({ infoData, personalData }) {
-  const { fullName, description, cell, git, website, email, linkedin, linkedinLink, address } = infoData
+  const { fullName, description, git, website, email, linkedin, linkedinLink } = infoData
   const { profile, languages, more, other, personalities, hobbies } = personalData
 
   return (
@@ -59,7 +56,7 @@ export default function Info({ infoData, personalData }) {
             <div className='text-mygray text-base lg:text-sm'>{profile}</div>
           </div>
         </div>
-        <div className='bg-white p-6 w-full rounded-2xl drop-shadow-md'>
+        <div className='bg-white p-6 w-full rounded-2xl drop-shadow-md hidden md:block'>
           <div className='text-mygreen font-bold mb-2'>Skills</div>
           <div className='text-mygray text-base lg:text-sm'>
             <div className='font-bold text-black'>Coding Languages:</div>
@@ -70,7 +67,7 @@ export default function Info({ infoData, personalData }) {
             <div className='mt-1'>{other}</div>
           </div>
         </div>
-        <div className='bg-white p-6 rounded-2xl drop-shadow-md'>
+        <div className='bg-white p-6 rounded-2xl drop-shadow-md hidden md:block'>
           <div className='text-mygreen font-bold mb-2'>Qualities & Hobbies</div>
           <div className='text-mygray text-base lg:text-sm space-y-1'>
             <div className='font-bold text-black'>Personalities:</div>

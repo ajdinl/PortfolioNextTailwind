@@ -1,5 +1,5 @@
 export default function Personal({ personalData }) {
-  const { profile, languages, more, other, personalities, hobbies } = personalData
+  const { profile } = personalData
 
   return (
     <div className='flex-col flex-start hidden md:flex'>

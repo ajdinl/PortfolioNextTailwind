@@ -24,7 +24,7 @@
       "details": [
         "Developing and maintaining a full-stack Ruby on Rails application with RESTful APIs, advanced ActiveRecord associations, and complex business logic",
         "Optimizing database performance through SQL query tuning, caching with Redis, and background job processing with Sidekiq",
-        "Building modern React frontend components with ChakraUI, applying atomic design principles and custom hooks",
+        "Building modern React/TypeScript frontend components with ChakraUI, applying atomic design principles and custom hooks",
         "Implementing comprehensive test coverage using RSpec for backend and Jest/React Testing Library for frontend",
         "Architecting real-time features with Action Cable for live updates and notifications",
         "Enhancing overall application performance through database indexing, query optimization, and efficient frontend state management"
