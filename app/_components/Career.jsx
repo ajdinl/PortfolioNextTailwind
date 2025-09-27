@@ -1,3 +1,5 @@
+import { highlightText } from './highlightText'
+
 export default function Career({ careerData }) {
   return (
     <div className='flex flex-col items-center'>
@@ -29,9 +31,9 @@ export default function Career({ careerData }) {
               </div>
               <div className='ml-4 bg-white'>
                 <ul className='list-disc'>
-                  {item.details.map((obligation, index) => (
-                    <li className='text-left' key={index}>
-                      {obligation}
+                  {item.details.map((obligation, idx) => (
+                    <li className='text-left' key={idx}>
+                      {highlightText(obligation)}
                     </li>
                   ))}
                 </ul>

@@ -1,3 +1,5 @@
+import { highlightText } from './highlightText'
+
 export default function Info({ infoData, personalData }) {
   const { fullName, description, git, website, email, linkedin, linkedinLink } = infoData
   const { profile, languages, more, other, personalities, hobbies } = personalData
@@ -53,7 +55,7 @@ export default function Info({ infoData, personalData }) {
         <div className='flex-col flex-start flex md:hidden'>
           <div className='bg-white p-6 w-full rounded-2xl drop-shadow-md'>
             <div className='text-mygreen font-bold mb-2'>About me</div>
-            <div className='text-mygray text-base lg:text-sm'>{profile}</div>
+            <div className='text-mygray text-base lg:text-sm'>{highlightText(profile)}</div>
           </div>
         </div>
         <div className='bg-white p-6 w-full rounded-2xl drop-shadow-md hidden md:block'>

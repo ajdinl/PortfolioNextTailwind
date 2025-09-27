@@ -9,9 +9,9 @@
     "linkedinLink": "https://www.linkedin.com/in/ajdin-lojic/"
   },
   "personal": {
-    "profile": "Full Stack Developer with a passion for building scalable and efficient web applications. Proficient in frontend technologies such as HTML/CSS, JavaScript, Typescript, and frameworks/libraries like React and Next.js. Skilled in backend development using Ruby, Node.js, and frameworks including Ruby on Rails, Express, and Nest.js. Dedicated to delivering efficient and user-friendly solutions.",
-    "languages": "JavaScript, Typescript, HTML/CSS, Ruby, Node.js",
-    "more": "React, Next.js, Ruby on Rails, Express, Nest.js, React Router, Redux, Ember",
+    "profile": "Full Stack Developer with a passion for building scalable and efficient web applications. Proficient in frontend technologies such as HTML/CSS, JavaScript, TypeScript, and frameworks/libraries like React and Next.js. Skilled in backend development using Ruby, Node.js, and frameworks including Ruby on Rails, Express, and Nest.js. Dedicated to delivering efficient and user-friendly solutions.",
+    "languages": "JavaScript, TypeScript, HTML/CSS, Ruby, Node.js",
+    "more": "React, Next.js, Ruby on Rails, Express, Nest.js, React Router, Redux",
     "other": "Material UI, Chakra UI, Tailwind CSS, Bootstrap, Figma, SQL, NoSQL, Git",
     "personalities": ["Accuracy", "Organization", "Creativity", "Communication"],
     "hobbies": ["Motorcycling", "Skiing", "CryptoCurrency"]
@@ -59,7 +59,7 @@
       "employer": "Experfy",
       "period": "Aug 2021 to Dec 2023",
       "details": [
-        "Developed and maintained front-end applications using ReactJS and EmberJS, ensuring seamless rendering and improved performance",
+        "Developed and maintained front-end applications using React and Ember, ensuring seamless rendering and improved performance",
         "Designed responsive user interfaces with HTML, CSS, and Bootstrap for cross-device compatibility",
         "Optimized web applications for speed and user experience through modern frontend techniques",
         "Integrated data from backend services and collaborated with backend developers to ensure smooth data flow",
