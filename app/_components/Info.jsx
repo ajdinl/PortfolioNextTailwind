@@ -3,7 +3,7 @@ export default function Info({ infoData, personalData }) {
   const { profile, languages, more, other, personalities, hobbies } = personalData
 
   return (
-    <div className='flex flex-col flex-start w-full max-w-[480px] lg:w-60'>
+    <div className='flex flex-col flex-start w-full md:max-w-[480px] lg:w-60'>
       <div className='flex flex-col flex-wrap justify-center text-center h-auto min-h-[10rem] bg-myblue rounded-2xl bg-gradient-to-tr from-myblue to-green-100 drop-shadow-md py-4 px-2'>
         <h1 className='text-mygraytwo lg:text-xl font-heboo font-extrabold bg-transparent drop-shadow mb-2'>
           {fullName}

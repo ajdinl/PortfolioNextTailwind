@@ -2,7 +2,7 @@ export default function MobileBottom({ personalData }) {
   const { languages, more, other, personalities, hobbies } = personalData
 
   return (
-    <div className='flex flex-col flex-start w-full max-w-[480px] lg:w-60 space-y-4'>
+    <div className='flex flex-col flex-start w-full md:max-w-[480px] lg:w-60 space-y-4'>
       <div className='bg-white p-6 w-full rounded-2xl drop-shadow-md block md:hidden'>
         <div className='text-mygreen font-bold mb-2'>Skills</div>
         <div className='text-mygray text-base lg:text-sm'>
