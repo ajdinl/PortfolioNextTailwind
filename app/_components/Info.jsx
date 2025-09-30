@@ -25,7 +25,7 @@ export default function Info({ infoData, personalData }) {
             href={linkedinLink}
             target='_blank'
             rel='noopener noreferrer'
-            className='dark:text-blue-100 text-mygray underline text-base lg:text-sm hover:text-myblue overflow-hidden text-ellipsis'
+            className='dark:text-blue-100 text-mygray underline text-base lg:text-sm hover:text-myblue overflow-hidden text-ellipsis w-fit'
           >
             {linkedin}
           </a>
@@ -34,7 +34,7 @@ export default function Info({ infoData, personalData }) {
             href={git}
             target='_blank'
             rel='noopener noreferrer'
-            className='dark:text-green-100 text-mygray underline text-base lg:text-sm hover:text-mygreen overflow-hidden text-ellipsis'
+            className='dark:text-green-100 text-mygray underline text-base lg:text-sm hover:text-mygreen overflow-hidden text-ellipsis w-fit'
           >
             {git}
           </a>
@@ -43,12 +43,12 @@ export default function Info({ infoData, personalData }) {
             href={website}
             target='_blank'
             rel='noopener noreferrer'
-            className='dark:text-red-100 text-mygray underline text-base lg:text-sm hover:text-orange-400 overflow-hidden text-ellipsis'
+            className='dark:text-red-100 text-mygray underline text-base lg:text-sm hover:text-orange-400 overflow-hidden text-ellipsis w-fit'
           >
             {website}
           </a>
           <div className='font-bold dark:text-white drop-shadow-md'>Email:</div>
-          <div className='dark:text-purple-100 text-mygray text-base lg:text-sm underline hover:text-purple-400 overflow-hidden text-ellipsis'>
+          <div className='dark:text-purple-100 text-mygray text-base lg:text-sm underline hover:text-purple-400 overflow-hidden text-ellipsis w-fit'>
             <a href={'mailto:' + email}>{email}</a>
           </div>
         </div>
