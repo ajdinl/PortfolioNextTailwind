@@ -38,7 +38,7 @@ export default function ThemeToggle() {
                         ${isDarkMode ? 'translate-x-5' : 'translate-x-0'}
                     `}
                 >
-                    {isDarkMode ? <SunIcon className='w-4 h-4 md:w-5 md:h-5 text-yellow-500' /> : <MoonIcon className='w-4 h-4 md:w-5 md:h-5 text-black' />}
+                    {isDarkMode ? <MoonIcon className='w-4 h-4 md:w-5 md:h-5 text-black' /> : <SunIcon className='w-4 h-4 md:w-5 md:h-5 text-yellow-500' />}
                 </div>
             </button>
         </div>
