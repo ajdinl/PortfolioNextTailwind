@@ -1,4 +1,5 @@
 import '@/styles/globals.css';
+import ThemeWrapper from '@/app/_components/ThemeWrapper';
 
 export const metadata = {
     title: 'Ajdin Lojic | Full Stack Web Developer (React, Node.js, Ruby on Rails)',
@@ -39,20 +40,10 @@ export default function RootLayout({ children }) {
                 <meta name='author' content={metadata.author} />
                 <meta name='google-site-verification' content={metadata.googleSiteVerification} />
                 <link rel='icon' href={metadata.icon} />
-                <script
-                    dangerouslySetInnerHTML={{
-                        __html: `
-              try {
-                const theme = localStorage.getItem('theme') || 'light';
-                document.documentElement.classList.toggle('dark', theme === 'dark');
-              } catch (e) {
-                document.documentElement.classList.remove('dark');
-              }
-            `,
-                    }}
-                />
             </head>
-            <body>{children}</body>
+            <body>
+                <ThemeWrapper>{children}</ThemeWrapper>
+            </body>
         </html>
     );
 }
