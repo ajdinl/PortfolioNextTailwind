@@ -11,7 +11,7 @@ export default function Info({ infoData, personalData }) {
                 <p className='text-mygray bg-transparent text-base lg:text-sm drop-shadow'>{description}</p>
             </div>
             <div className='flex flex-col space-y-4'>
-                <div className='flex flex-col p-6 pb-2 space-y-2'>
+                <div className='flex flex-col p-6 pb-2 space-y-1.5'>
                     <div
                         className='text-mygreen font-bold drop-shadow-md
         dark:text-white mb-1'
@@ -22,11 +22,11 @@ export default function Info({ infoData, personalData }) {
                     <a href={linkedinLink} target='_blank' rel='noopener noreferrer' className='dark:text-blue-100 text-mygray underline text-base lg:text-sm hover:text-myblue overflow-hidden text-ellipsis w-fit'>
                         {linkedin}
                     </a>
-                    <div className='font-bold dark:text-white drop-shadow-md'>Git:</div>
+                    <div className='font-bold dark:text-white drop-shadow-md'>GitHub:</div>
                     <a href={git} target='_blank' rel='noopener noreferrer' className='dark:text-green-100 text-mygray underline text-base lg:text-sm hover:text-mygreen overflow-hidden text-ellipsis w-fit'>
                         {git}
                     </a>
-                    <div className='font-bold dark:text-white drop-shadow-md'>Web:</div>
+                    <div className='font-bold dark:text-white drop-shadow-md'>Website:</div>
                     <a href={website} target='_blank' rel='noopener noreferrer' className='dark:text-red-100 text-mygray underline text-base lg:text-sm hover:text-orange-400 overflow-hidden text-ellipsis w-fit'>
                         {website}
                     </a>
