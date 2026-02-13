@@ -24,7 +24,7 @@
       "details": [
         "Building and optimizing backend services with Ruby on Rails, PostgreSQL, and Elasticsearch for full-text search and data indexing",
         "Managing asynchronous workflows with Sidekiq, including scheduled jobs (sidekiq-cron) and unique job processing at scale",
-        "Integrating AWS services (S3, Lambda, ECS, KMS) for cloud storage, serverless functions, and secure data encryption",
+        "Deploying and managing applications on Heroku, integrating AWS services (S3, Lambda, ECS, KMS) for cloud storage, serverless functions, and secure data encryption",
         "Monitoring application health and performance using Sentry for error tracking and performance monitoring",
         "Implementing authentication and authorization systems with Devise, Doorkeeper (OAuth), and Pundit for policy-based access control",
         "Writing and maintaining test suites with RSpec and Minitest, ensuring code quality with RuboCop"
@@ -40,7 +40,8 @@
         "Built modern React/TypeScript frontend components with ChakraUI, applying atomic design principles and custom hooks",
         "Implemented comprehensive test coverage using RSpec for backend and Jest/React Testing Library for frontend",
         "Architected real-time features with Action Cable for live updates and notifications",
-        "Enhanced overall application performance through database indexing, query optimization, and efficient frontend state management"
+        "Enhanced overall application performance through database indexing, query optimization, and efficient frontend state management",
+        "Deployed and managed application infrastructure on Heroku with CI/CD pipelines and environment configuration"
       ]
     },
     {

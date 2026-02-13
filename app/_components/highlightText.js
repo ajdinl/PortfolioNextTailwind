@@ -41,6 +41,7 @@ const keywords = [
   'Pundit',
   'Minitest',
   'RuboCop',
+  'Heroku',
 ]
 
 const highlightRegex = new RegExp(`(${keywords.join('|').replace(/\./g, '\\.')})`, 'g')
