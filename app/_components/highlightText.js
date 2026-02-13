@@ -27,6 +27,10 @@ const keywords = [
   'Ember',
   'RESTful APIs',
   'RSpec',
+  'jQuery',
+  'AJAX',
+  'Action Cable',
+  'ActiveRecord',
   'PostgreSQL',
   'Elasticsearch',
   'sidekiq-cron',
@@ -44,7 +48,7 @@ const highlightRegex = new RegExp(`(${keywords.join('|').replace(/\./g, '\\.')})
 export function highlightText(text) {
   return text.split(highlightRegex).map((part, i) =>
     keywords.includes(part) ? (
-      <strong key={i} className='font-bold'>
+      <strong key={i} className='font-bold text-black dark:text-white'>
         {part}
       </strong>
     ) : (

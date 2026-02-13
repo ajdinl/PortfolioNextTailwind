@@ -37,8 +37,24 @@ html {
   background: #004520;
 }
 
+.dark .custom-scrollbar::-webkit-scrollbar-track {
+  background: #3a3a3a;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #4ade80;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #22c55e;
+}
+
 /* For Firefox */
 .custom-scrollbar {
   scrollbar-width: thin;
   scrollbar-color: #005c28 #f1f1f1;
+}
+
+.dark .custom-scrollbar {
+  scrollbar-color: #4ade80 #3a3a3a;
 }
