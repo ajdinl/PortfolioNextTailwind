@@ -3,11 +3,11 @@ import { highlightText } from './highlightText'
 export default function Career({ careerData }) {
   return (
     <div className='flex flex-col items-center'>
-      <div className='bg-white p-6 w-full h-full rounded-2xl drop-shadow-md'>
-        <div className='text-mygreen font-bold flex items-center justify-between'>
+      <div className='bg-white dark:bg-neutral-800 p-6 w-full h-full rounded-2xl drop-shadow-md'>
+        <h2 className='text-mygreen dark:text-green-400 font-bold flex items-center justify-between'>
           Career Summary
           {careerData.length > 1 && (
-            <div className='text-xs text-gray-500 flex items-center'>
+            <div className='text-xs text-gray-500 dark:text-gray-400 flex items-center'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 className='h-4 w-4 mr-1'
@@ -20,16 +20,16 @@ export default function Career({ careerData }) {
               Scroll for more
             </div>
           )}
-        </div>
-        <div className='text-mygray max-h-[650px] md:max-h-[865px] lg:max-h-[817px] overflow-y-auto pr-2 custom-scrollbar'>
+        </h2>
+        <div className='text-mygray dark:text-gray-300 max-h-[650px] md:max-h-[865px] lg:max-h-[817px] overflow-y-auto pr-2 custom-scrollbar'>
           {careerData.map((item, index) => (
             <div className='text-base lg:text-sm space-y-1' key={index}>
-              <div className='font-bold text-black mt-2'>{item.title}</div>
+              <div className='font-bold text-black dark:text-white mt-2'>{item.title}</div>
               <div>
-                <div className='font-bold text-gray-800'>{item.employer}</div>
-                <div className='text-gray-700'>{item.period}</div>
+                <div className='font-bold text-gray-800 dark:text-gray-200'>{item.employer}</div>
+                <div className='text-gray-700 dark:text-gray-400'>{item.period}</div>
               </div>
-              <div className='ml-4 bg-white'>
+              <div className='ml-4'>
                 <ul className='list-disc'>
                   {item.details.map((obligation, idx) => (
                     <li className='text-left' key={idx}>

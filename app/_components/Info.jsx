@@ -19,43 +19,43 @@ export default function Info({ infoData, personalData }) {
                         How to reach me
                     </div>
                     <div className='font-bold dark:text-white drop-shadow-md'>LinkedIn:</div>
-                    <a href={linkedinLink} target='_blank' rel='noopener noreferrer' className='dark:text-blue-100 text-mygray underline text-base lg:text-sm hover:text-myblue overflow-hidden text-ellipsis w-fit'>
+                    <a href={linkedinLink} target='_blank' rel='noopener noreferrer' className='dark:text-blue-100 text-mygray underline text-base lg:text-sm hover:text-myblue dark:hover:text-blue-400 overflow-hidden text-ellipsis w-fit'>
                         {linkedin}
                     </a>
                     <div className='font-bold dark:text-white drop-shadow-md'>GitHub:</div>
-                    <a href={git} target='_blank' rel='noopener noreferrer' className='dark:text-green-100 text-mygray underline text-base lg:text-sm hover:text-mygreen overflow-hidden text-ellipsis w-fit'>
+                    <a href={git} target='_blank' rel='noopener noreferrer' className='dark:text-green-100 text-mygray underline text-base lg:text-sm hover:text-mygreen dark:hover:text-green-400 overflow-hidden text-ellipsis w-fit'>
                         {git}
                     </a>
                     <div className='font-bold dark:text-white drop-shadow-md'>Website:</div>
-                    <a href={website} target='_blank' rel='noopener noreferrer' className='dark:text-red-100 text-mygray underline text-base lg:text-sm hover:text-orange-400 overflow-hidden text-ellipsis w-fit'>
+                    <a href={website} target='_blank' rel='noopener noreferrer' className='dark:text-red-100 text-mygray underline text-base lg:text-sm hover:text-orange-400 dark:hover:text-orange-300 overflow-hidden text-ellipsis w-fit'>
                         {website}
                     </a>
                     <div className='font-bold dark:text-white drop-shadow-md'>Email:</div>
-                    <div className='dark:text-purple-100 text-mygray text-base lg:text-sm underline hover:text-purple-400 overflow-hidden text-ellipsis w-fit'>
-                        <a href={'mailto:' + email}>{email}</a>
-                    </div>
+                    <a href={'mailto:' + email} className='dark:text-purple-100 text-mygray text-base lg:text-sm underline hover:text-purple-400 dark:hover:text-purple-300 overflow-hidden text-ellipsis w-fit'>
+                        {email}
+                    </a>
                 </div>
                 <div className='flex-col flex-start flex md:hidden'>
-                    <div className='bg-white p-6 w-full rounded-2xl drop-shadow-md'>
-                        <div className='text-mygreen font-bold mb-2'>About me</div>
-                        <div className='text-mygray text-base lg:text-sm'>{highlightText(profile)}</div>
+                    <div className='bg-white dark:bg-neutral-800 p-6 w-full rounded-2xl drop-shadow-md'>
+                        <h2 className='text-mygreen dark:text-green-400 font-bold mb-2'>About me</h2>
+                        <div className='text-mygray dark:text-gray-300 text-base lg:text-sm'>{highlightText(profile)}</div>
                     </div>
                 </div>
-                <div className='bg-white p-6 w-full rounded-2xl drop-shadow-md hidden md:block'>
-                    <div className='text-mygreen font-bold mb-2'>Skills</div>
-                    <div className='text-mygray text-base lg:text-sm'>
-                        <div className='font-bold text-black'>Coding Languages:</div>
+                <div className='bg-white dark:bg-neutral-800 p-6 w-full rounded-2xl drop-shadow-md hidden md:block'>
+                    <h2 className='text-mygreen dark:text-green-400 font-bold mb-2'>Skills</h2>
+                    <div className='text-mygray dark:text-gray-300 text-base lg:text-sm'>
+                        <div className='font-bold text-black dark:text-white'>Coding Languages:</div>
                         <div className='mb-1 mt-1'>{languages}</div>
-                        <div className='font-bold text-black'>Frameworks:</div>
+                        <div className='font-bold text-black dark:text-white'>Frameworks:</div>
                         <div className='mb-1 mt-1'>{more}</div>
-                        <div className='font-bold text-black'>Other:</div>
+                        <div className='font-bold text-black dark:text-white'>Other:</div>
                         <div className='mt-1'>{other}</div>
                     </div>
                 </div>
-                <div className='bg-white p-6 rounded-2xl drop-shadow-md hidden md:block'>
-                    <div className='text-mygreen font-bold mb-2'>Qualities & Hobbies</div>
-                    <div className='text-mygray text-base lg:text-sm space-y-1'>
-                        <div className='font-bold text-black'>Personalities:</div>
+                <div className='bg-white dark:bg-neutral-800 p-6 rounded-2xl drop-shadow-md hidden md:block'>
+                    <h2 className='text-mygreen dark:text-green-400 font-bold mb-2'>Qualities & Hobbies</h2>
+                    <div className='text-mygray dark:text-gray-300 text-base lg:text-sm space-y-1'>
+                        <div className='font-bold text-black dark:text-white'>Personalities:</div>
                         <div className='ml-4'>
                             <ul className='list-disc'>
                                 {personalities.map((personality, index) => (
@@ -63,7 +63,7 @@ export default function Info({ infoData, personalData }) {
                                 ))}
                             </ul>
                         </div>
-                        <div className='font-bold text-black'>Hobby:</div>
+                        <div className='font-bold text-black dark:text-white'>Hobby:</div>
                         <div className='ml-4'>
                             <ul className='list-disc'>
                                 {hobbies.map((hobby, index) => (
