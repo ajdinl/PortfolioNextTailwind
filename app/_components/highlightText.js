@@ -27,6 +27,16 @@ const keywords = [
   'Ember',
   'RESTful APIs',
   'RSpec',
+  'PostgreSQL',
+  'Elasticsearch',
+  'sidekiq-cron',
+  'AWS',
+  'Sentry',
+  'Devise',
+  'Doorkeeper',
+  'Pundit',
+  'Minitest',
+  'RuboCop',
 ]
 
 const highlightRegex = new RegExp(`(${keywords.join('|').replace(/\./g, '\\.')})`, 'g')
