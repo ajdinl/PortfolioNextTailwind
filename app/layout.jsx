@@ -1,37 +1,46 @@
 import '@/styles/globals.css';
+import { Instrument_Serif, Schibsted_Grotesk, JetBrains_Mono } from 'next/font/google';
 import ThemeWrapper from '@/app/_components/ThemeWrapper';
+import db from '@/db.json';
+
+const display = Instrument_Serif({ subsets: ['latin', 'latin-ext'], weight: '400', style: ['normal', 'italic'], variable: '--font-display' });
+const sans = Schibsted_Grotesk({ subsets: ['latin', 'latin-ext'], variable: '--font-sans' });
+const mono = JetBrains_Mono({ subsets: ['latin', 'latin-ext'], variable: '--font-mono' });
+
+const { fullName, website } = db.info;
+const title = `${fullName} | Software Engineer · Ruby on Rails, React, TypeScript`;
+const description =
+    'Software Engineer with 5+ years of experience building SaaS products with Ruby on Rails, React, Next.js, TypeScript, PostgreSQL and AWS. Open to new opportunities, remote-ready.';
 
 export const metadata = {
-    title: 'Ajdin Lojic | Full Stack Web Developer (React, Node.js, Ruby on Rails)',
-    description: 'Full Stack Developer skilled in React, Node.js, Ruby on Rails, Next.js & Nest.js. Building scalable, efficient, and user-friendly web applications with modern technologies.',
-    keywords: 'Ajdin Lojic, Web Developer, Full Stack Developer, React Developer, Node.js Developer, Ruby on Rails Developer, Next.js Developer, Nest.js Developer, JavaScript, TypeScript, Frontend, Backend, Portfolio',
-    author: 'Ajdin Lojic',
-    creator: 'Ajdin Lojic',
-    publisher: 'Ajdin Lojic',
-    googleSiteVerification: 'I0bxza9FsmM34Q21YfY31hluNzPw6hJdo7t7rN1-um4',
-    icons: {
-        icon: '/favicon.ico',
-    },
+    metadataBase: new URL(website),
+    title,
+    description,
+    authors: [{ name: fullName, url: website }],
+    creator: fullName,
+    alternates: { canonical: '/' },
+    verification: { google: 'I0bxza9FsmM34Q21YfY31hluNzPw6hJdo7t7rN1-um4' },
     openGraph: {
-        title: 'Ajdin Lojic | Full Stack Web Developer',
-        description: 'Explore Ajdin Lojic’s portfolio showcasing expertise in React, Node.js, Ruby on Rails, Next.js, Express & Nest.js.',
-        url: 'https://ajdinlojic.vercel.app/',
-        siteName: 'Ajdin Lojic Portfolio',
+        title,
+        description,
+        url: '/',
+        siteName: `${fullName} | Portfolio`,
         locale: 'en_US',
-        type: 'website',
+        type: 'profile',
     },
-    social: {
-        linkedIn: {
-            url: 'https://www.linkedin.com/in/ajdin-lojic/',
-            title: 'Ajdin Lojic | Full Stack Web Developer',
-            description: 'Check out my professional portfolio highlighting expertise in React, Node.js, Ruby on Rails, Next.js, Express & Nest.js.',
-        },
-    },
+    twitter: { card: 'summary_large_image', title, description },
+};
+
+export const viewport = {
+    themeColor: [
+        { media: '(prefers-color-scheme: light)', color: '#f5f2eb' },
+        { media: '(prefers-color-scheme: dark)', color: '#0d0f0e' },
+    ],
 };
 
 export default function RootLayout({ children }) {
     return (
-        <html lang='en' suppressHydrationWarning>
+        <html lang='en' suppressHydrationWarning className={`${display.variable} ${sans.variable} ${mono.variable}`}>
             <body>
                 <ThemeWrapper>{children}</ThemeWrapper>
             </body>

@@ -1,84 +1,317 @@
 {
   "info": {
     "fullName": "Ajdin Lojić",
-    "description": "Software Engineer",
-    "git": "https://github.com/ajdinl",
-    "website": "https://ajdinlojic.vercel.app",
+    "title": "Software Engineer",
+    "headline": "I build reliable backends, data integrations and polished frontends for B2B SaaS with Ruby on Rails, React and TypeScript.",
+    "cvTagline": "Backend & Full Stack · Ruby on Rails · React · TypeScript",
+    "availability": "Open to new opportunities",
+    "yearsOfExperience": "5+",
+    "location": "Bosnia & Herzegovina",
+    "timezone": "CET · Remote-ready",
     "email": "ajdinlojic@gmail.com",
-    "linkedin": "@ajdinlojic",
-    "linkedinLink": "https://www.linkedin.com/in/ajdin-lojic/"
+    "github": "https://github.com/ajdinl",
+    "githubHandle": "ajdinl",
+    "linkedin": "https://www.linkedin.com/in/ajdin-lojic/",
+    "linkedinHandle": "ajdin-lojic",
+    "website": "https://ajdinlojic.vercel.app",
+    "cv": "/Ajdin-Lojic-CV.pdf",
+    "current": {
+      "role": "Backend Engineer",
+      "employer": "Klika",
+      "client": "Spiro",
+      "clientUrl": "https://spiro.ai"
+    }
   },
-  "personal": {
-    "profile": "Software Engineer with a passion for building scalable and efficient web applications. Skilled in backend development using Ruby, Node.js, and frameworks including Ruby on Rails, Express, and Nest.js. Proficient in modern frontend technologies including JavaScript, TypeScript, and frameworks/libraries like React and Next.js. Dedicated to delivering efficient and user-friendly solutions.",
-    "languages": "JavaScript, TypeScript, Ruby, Node.js",
-    "more": "React, Next.js, Ruby on Rails, Express, Nest.js, React Router, Redux",
-    "other": "Material UI, Chakra UI, Tailwind CSS, Bootstrap, Figma, SQL, NoSQL, Git",
-    "personalities": ["Accuracy", "Organization", "Creativity", "Communication"],
-    "hobbies": ["Motorcycling", "Skiing", "CryptoCurrency"]
-  },
+  "about": [
+    "I'm a Software Engineer with 5+ years of experience shipping production web applications. Today I work on the backend of Spiro, an AI-powered CRM used by 200+ manufacturers and distributors, where I build integrations that sync data from ERP and e-commerce platforms like Epicor P21, NetSuite and Shopify, using Ruby on Rails, PostgreSQL, Sidekiq and AWS.",
+    "Before that I integrated Meta, Google and Snapchat ad platforms into a multi-channel campaign product, and I started on the frontend with React and Next.js. That path makes me comfortable owning a feature end to end: data model, API, background jobs, UI and tests."
+  ],
+  "cvProfile": "Software Engineer with 5+ years building B2B SaaS and third-party integrations. On the backend of Spiro, an AI-powered CRM used by 200+ manufacturers and distributors, I sync data from Epicor P21, NetSuite and Shopify with Ruby on Rails, PostgreSQL, Sidekiq and AWS. Previously integrated Meta, Google and Snapchat ad platforms, and started on the frontend with React and Next.js.",
+  "principles": [
+    {
+      "title": "End-to-end ownership",
+      "text": "From database schema to the last pixel, I take features all the way to production and keep an eye on them after release."
+    },
+    {
+      "title": "Quality by default",
+      "text": "RSpec, Minitest, Jest and code review are part of the work, not an afterthought."
+    },
+    {
+      "title": "Clear communication",
+      "text": "Used to remote, async teams working with clients across time zones."
+    }
+  ],
+  "interests": [
+    "Motorcycling",
+    "Skiing"
+  ],
+  "highlights": [
+    {
+      "value": "5+",
+      "label": "years building production web applications"
+    },
+    {
+      "value": "200+",
+      "label": "B2B companies use Spiro, the CRM whose backend I build"
+    },
+    {
+      "value": "7+",
+      "label": "third-party integrations across ERP, e-commerce and ad platforms"
+    }
+  ],
+  "integrations": [
+    "Epicor Prophet 21 (P21)",
+    "Epicor",
+    "NetSuite",
+    "Shopify",
+    "Meta (Facebook & Instagram)",
+    "Google Ads",
+    "Snapchat",
+    "Twilio"
+  ],
+  "skills": [
+    {
+      "group": "Backend",
+      "items": [
+        "Ruby on Rails",
+        "Ruby",
+        "Node.js",
+        "NestJS",
+        "Express",
+        "REST APIs",
+        "Sidekiq",
+        "Action Cable",
+        "Devise",
+        "Doorkeeper (OAuth 2)",
+        "Pundit"
+      ]
+    },
+    {
+      "group": "Frontend",
+      "items": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "JavaScript",
+        "Redux",
+        "Tailwind CSS",
+        "Chakra UI",
+        "Material UI",
+        "Ember"
+      ]
+    },
+    {
+      "group": "Data & Cloud",
+      "items": [
+        "PostgreSQL",
+        "Redis",
+        "Elasticsearch",
+        "AWS (S3, Lambda, ECS, KMS)",
+        "Heroku",
+        "CI/CD",
+        "Sentry"
+      ]
+    },
+    {
+      "group": "Integrations",
+      "items": [
+        "Epicor P21",
+        "Epicor",
+        "NetSuite",
+        "Shopify",
+        "ERP SQL databases",
+        "Meta (Facebook, Instagram)",
+        "Google Ads",
+        "Snapchat",
+        "Twilio"
+      ]
+    },
+    {
+      "group": "Quality & Tools",
+      "items": [
+        "RSpec",
+        "Minitest",
+        "Jest",
+        "React Testing Library",
+        "RuboCop",
+        "Git",
+        "Figma"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Spiro",
+      "url": "https://spiro.ai",
+      "domain": "AI-powered CRM for 200+ manufacturers & distributors",
+      "role": "Backend Engineer",
+      "via": "Klika",
+      "period": "2026 – now",
+      "summary": "Backend services and ERP / e-commerce integrations (Epicor P21, NetSuite, Shopify and direct SQL database syncs), plus internal tools that show integration health per customer.",
+      "stack": [
+        "Ruby on Rails",
+        "PostgreSQL",
+        "Sidekiq",
+        "Elasticsearch",
+        "AWS"
+      ]
+    },
+    {
+      "name": "WhatCampaign",
+      "url": "https://www.whatcampaign.com",
+      "domain": "Multi-channel ad campaigns & media planning",
+      "role": "Full Stack Engineer",
+      "via": "Klika",
+      "period": "2024 – 2025",
+      "summary": "Early-stage startup platform for launching ads on Meta (Facebook, Instagram), Google, Snapchat and more from one place, with media plans. Taken from build to pilot with its first clients.",
+      "stack": [
+        "Ruby on Rails",
+        "React",
+        "TypeScript",
+        "Meta & Google Ads APIs",
+        "Sidekiq"
+      ]
+    },
+    {
+      "name": "Texttelligent",
+      "url": "https://texttelligent.com/automotive/",
+      "domain": "Customer & service texting for car dealerships",
+      "role": "Frontend Engineer",
+      "via": "Trinity",
+      "period": "2024",
+      "summary": "Frontend for the automotive product, where dealership sales and service teams talk to customers from one compliant inbox.",
+      "stack": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Material UI"
+      ]
+    },
+    {
+      "name": "Experfy",
+      "url": "https://www.experfy.com",
+      "domain": "Talent marketplace & hiring platform",
+      "role": "Frontend Developer",
+      "period": "2021 – 2023",
+      "summary": "My first engineering role: frontend for a platform connecting companies with vetted experts, with responsive interfaces, performance work and API integrations.",
+      "stack": [
+        "React",
+        "Ember",
+        "JavaScript"
+      ]
+    },
+    {
+      "name": "Scanspire",
+      "domain": "Website for a penetration-testing company · Freelance",
+      "role": "Frontend Engineer",
+      "period": "2024 – 2025",
+      "summary": "Freelance build of a fast, SEO-friendly Next.js website for a company offering penetration testing and security assessments. Since retired.",
+      "stack": [
+        "Next.js",
+        "React",
+        "Bootstrap"
+      ]
+    }
+  ],
   "career": [
     {
-      "title": "Software Engineer (Backend)",
       "employer": "Klika",
-      "period": "Jan 2026 to Present",
-      "details": [
-        "Building and optimizing backend services with Ruby on Rails, PostgreSQL, and Elasticsearch for full-text search and data indexing",
-        "Managing asynchronous workflows with Sidekiq, including scheduled jobs (sidekiq-cron) and unique job processing at scale",
-        "Deploying and managing applications on Heroku, integrating AWS services (S3, Lambda, ECS, KMS) for cloud storage, serverless functions, and secure data encryption",
-        "Monitoring application health and performance using Sentry for error tracking and performance monitoring",
-        "Implementing authentication and authorization systems with Devise, Doorkeeper (OAuth), and Pundit for policy-based access control",
-        "Writing and maintaining test suites with RSpec and Minitest, ensuring code quality with RuboCop"
+      "employerUrl": "https://klika.us",
+      "roles": [
+        {
+          "title": "Software Engineer (Backend)",
+          "client": "Spiro",
+          "clientUrl": "https://spiro.ai",
+          "period": "Jan 2026 – Present",
+          "details": [
+            "Build backend services and product features for Spiro, an AI-powered CRM used by 200+ manufacturers and distributors, on Ruby on Rails and PostgreSQL",
+            "Build and maintain ERP and e-commerce integrations (Epicor P21, NetSuite, Shopify and more), pulling data from customers' SQL databases and syncing customers, orders and products into Spiro",
+            "Built internal tools that show integration status and data per customer company, plus automations for recurring integration and operations work",
+            "Run asynchronous workflows and scheduled syncs on Sidekiq, using sidekiq-cron and unique job processing to keep high-volume work reliable and idempotent",
+            "Contributed to communication features: Twilio calling and texting for Spiro's mobile app, and email account connections",
+            "Integrate AWS (S3, Lambda, ECS, KMS) for file storage, serverless processing and encryption of sensitive customer data, deployed on Heroku",
+            "Resolve production issues across the platform with Sentry monitoring, RSpec and Minitest suites and RuboCop-enforced standards",
+            "Build and tune Elasticsearch indexing and full-text search across accounts, contacts and activity data",
+            "Implement authentication and authorization with Devise, Doorkeeper (OAuth 2) and Pundit policies"
+          ],
+          "cvBullets": 6
+        },
+        {
+          "title": "Software Engineer (Full Stack)",
+          "client": "WhatCampaign",
+          "clientUrl": "https://www.whatcampaign.com",
+          "period": "Sep 2024 – Dec 2025",
+          "details": [
+            "Built an early-stage startup platform for media planning and launching ad campaigns across social networks from one place",
+            "Integrated advertising platform APIs (Meta for Facebook & Instagram, Google, Snapchat and more) for campaign creation and publishing",
+            "Developed it end to end: Ruby on Rails RESTful APIs, ActiveRecord domain models with complex business logic and a React/TypeScript frontend",
+            "Took the product from early development to a pilot with its first clients",
+            "Improved performance through SQL query tuning, database indexing, Redis caching and Sidekiq background jobs",
+            "Architected real-time updates and notifications with Action Cable",
+            "Built reusable React/TypeScript components with Chakra UI, following atomic design and custom hooks",
+            "Covered the backend with RSpec and the frontend with Jest and React Testing Library, shipping through CI/CD pipelines to Heroku"
+          ],
+          "cvBullets": 4
+        }
       ]
     },
     {
-      "title": "Software Engineer (Full Stack)",
-      "employer": "Klika",
-      "period": "Sep 2024 to Dec 2025",
-      "details": [
-        "Developed and maintained a full-stack Ruby on Rails application with RESTful APIs, advanced ActiveRecord associations, and complex business logic",
-        "Optimized database performance through SQL query tuning, caching with Redis, and background job processing with Sidekiq",
-        "Built modern React/TypeScript frontend components with ChakraUI, applying atomic design principles and custom hooks",
-        "Implemented comprehensive test coverage using RSpec for backend and Jest/React Testing Library for frontend",
-        "Architected real-time features with Action Cable for live updates and notifications",
-        "Enhanced overall application performance through database indexing, query optimization, and efficient frontend state management",
-        "Deployed and managed application infrastructure on Heroku with CI/CD pipelines and environment configuration"
-      ]
-    },
-    {
-      "title": "Software Engineer (Frontend)",
-      "employer": "Scanspire",
-      "period": "Mar 2024 to Dec 2025",
-      "details": [
-        "Developed dynamic web applications using React/Next.js with server-side rendering (SSR) and static site generation (SSG) for optimal performance",
-        "Built interactive, real-time user interfaces with jQuery and AJAX",
-        "Created responsive, mobile-first layouts using Bootstrap, ensuring cross-browser compatibility",
-        "Implemented modern frontend practices including component reusability, state management, and API integration",
-        "Optimized application performance through code splitting, lazy loading, and efficient data fetching"
-      ]
-    },
-    {
-      "title": "Software Engineer (Frontend)",
       "employer": "Trinity",
-      "period": "Feb 2024 to Aug 2024",
-      "details": [
-        "Developed scalable web applications using TypeScript with React/Next.js, ensuring high performance in client-side and server-side rendering",
-        "Built responsive and consistent user interfaces with Material UI",
-        "Optimized application performance and user experience through advanced frontend techniques",
-        "Integrated backend services and collaborated with backend developers to ensure efficient data flow",
-        "Created UI prototypes and design handoffs in Figma for streamlined collaboration"
+      "roles": [
+        {
+          "title": "Software Engineer (Frontend)",
+          "client": "Texttelligent",
+          "clientUrl": "https://texttelligent.com/automotive/",
+          "period": "Feb 2024 – Aug 2024",
+          "details": [
+            "Built frontend features for Texttelligent's automotive product, mostly customer and service-department communication flows that let car dealerships text customers from one compliant inbox",
+            "Developed TypeScript + React/Next.js applications with a consistent Material UI component system, working closely with backend engineers on API contracts",
+            "Created UI prototypes and design handoffs in Figma"
+          ],
+          "cvBullets": 2
+        }
       ]
     },
     {
-      "title": "Software Developer (Frontend)",
       "employer": "Experfy",
-      "period": "Aug 2021 to Dec 2023",
-      "details": [
-        "Developed and maintained front-end applications using React and Ember, ensuring seamless rendering and improved performance",
-        "Designed responsive user interfaces with HTML, CSS, and Bootstrap for cross-device compatibility",
-        "Optimized web applications for speed and user experience through modern frontend techniques",
-        "Integrated data from backend services and collaborated with backend developers to ensure smooth data flow",
-        "Created UI prototypes with Adobe XD and contributed to best practices in version control using Git"
+      "employerUrl": "https://www.experfy.com",
+      "roles": [
+        {
+          "title": "Software Developer (Frontend)",
+          "period": "Aug 2021 – Dec 2023",
+          "details": [
+            "Developed the frontend of Experfy's talent marketplace and hiring platform with React and Ember",
+            "Built responsive, cross-device interfaces and improved page speed and usability",
+            "Integrated backend services and collaborated with backend developers on smooth data flow"
+          ],
+          "cvBullets": 2
+        }
       ]
+    },
+    {
+      "employer": "Scanspire",
+      "roles": [
+        {
+          "title": "Frontend Engineer (Freelance)",
+          "period": "Mar 2024 – Dec 2025",
+          "details": [
+            "Built the website for Scanspire, a penetration testing and security assessment company",
+            "Used Next.js server-side rendering (SSR) and static site generation (SSG) for fast first loads and SEO",
+            "Optimized performance with code splitting, lazy loading and responsive, mobile-first layouts"
+          ],
+          "cvBullets": 1
+        }
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "name": "English",
+      "level": "Professional working proficiency"
+    },
+    {
+      "name": "Bosnian",
+      "level": "Native"
     }
   ]
 }

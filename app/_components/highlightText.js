@@ -2,58 +2,62 @@ const keywords = [
   'Ruby on Rails',
   'React/Next.js',
   'React/TypeScript',
+  'React Testing Library',
   'React',
   'Next.js',
   'TypeScript',
   'JavaScript',
   'Node.js',
+  'NestJS',
   'Express',
-  'Nest.js',
-  'HTML/CSS',
-  'Ruby',
-  'SQL',
-  'Redis',
-  'Sidekiq',
-  'ChakraUI',
-  'Jest/React Testing Library',
-  'Bootstrap',
-  'Material UI',
-  'Figma',
-  'API',
-  'Git',
-  'Adobe XD',
-  'HTML',
-  'CSS',
-  'Ember',
-  'RESTful APIs',
-  'RSpec',
-  'jQuery',
-  'AJAX',
-  'Action Cable',
-  'ActiveRecord',
   'PostgreSQL',
   'Elasticsearch',
+  'Redis',
+  'Sidekiq',
   'sidekiq-cron',
+  'Action Cable',
+  'ActiveRecord',
+  'RESTful APIs',
+  'Chakra UI',
+  'Material UI',
+  'Bootstrap',
+  'Ember',
+  'Figma',
   'AWS',
+  'Heroku',
+  'Epicor P21',
+  'NetSuite',
+  'Shopify',
+  'Twilio',
   'Sentry',
   'Devise',
   'Doorkeeper',
+  'OAuth 2',
   'Pundit',
+  'RSpec',
   'Minitest',
+  'Jest',
   'RuboCop',
-  'Heroku',
+  'CI/CD',
+  'SSR',
+  'SSG',
 ]
 
-const highlightRegex = new RegExp(`(${keywords.join('|').replace(/\./g, '\\.')})`, 'g')
+const escape = (word) => word.replace(/[.*+?^${}()|[\]\\/]/g, '\\$&')
+
+const highlightRegex = new RegExp(
+  `(${[...keywords].sort((a, b) => b.length - a.length).map(escape).join('|')})`,
+  'g'
+)
 
 export function highlightText(text) {
   return text.split(highlightRegex).map((part, i) =>
     keywords.includes(part) ? (
-      <strong key={i} className='font-bold text-black dark:text-white'>
+      <strong key={i} className='font-medium text-ink'>
         {part}
       </strong>
     ) : (
-      <span key={i}>{part}</span>
+      part
     )
   )
 }
