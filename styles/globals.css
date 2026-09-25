@@ -2,59 +2,207 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  background-color: #efefef;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-@media (min-width: 850px) {
-  html {
-    max-width: 850px;
-  }
+:root {
+  --paper: 245 242 235;
+  --surface: 251 249 244;
+  --ink: 21 24 22;
+  --muted: 76 81 76;
+  --faint: 120 125 118;
+  --accent: 0 92 40;
+  --accent-soft: 216 233 220;
+  color-scheme: light;
 }
 
 .dark {
-  background-color: #252525;
+  --paper: 13 15 14;
+  --surface: 22 25 23;
+  --ink: 236 234 226;
+  --muted: 178 181 173;
+  --faint: 128 133 125;
+  --accent: 110 226 160;
+  --accent-soft: 24 46 34;
+  color-scheme: dark;
 }
 
-/* Custom scrollbar styles */
-.custom-scrollbar::-webkit-scrollbar {
-  width: 6px;
+/* The CV always renders in the light palette; its header opts back into .dark. */
+.cv-sheet {
+  --paper: 255 255 255;
+  --surface: 248 246 241;
+  --ink: 21 24 22;
+  --muted: 70 75 70;
+  --faint: 118 123 116;
+  --accent: 0 92 40;
+  --accent-soft: 232 241 235;
+  color-scheme: light;
+  page: cv;
 }
 
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
+.cv-sheet .dark {
+  --paper: 21 24 22;
+  --ink: 240 238 231;
+  --muted: 186 189 181;
+  --accent: 110 226 160;
 }
 
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #005c28;
-  border-radius: 10px;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    background-image: radial-gradient(rgb(var(--ink) / 0.06) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+
+  ::selection {
+    background: rgb(var(--accent) / 0.25);
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--accent));
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
 }
 
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #004520;
+@layer components {
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.18em] text-faint;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full border border-ink/10 bg-surface px-2.5 py-1 font-mono text-[0.72rem] text-muted;
+  }
+
+  .card {
+    @apply rounded-2xl border border-ink/10 bg-surface;
+  }
+
+  .btn {
+    @apply inline-flex h-11 items-center justify-center gap-2 rounded-full px-5 text-sm font-medium transition duration-200;
+  }
+
+  .btn-primary {
+    @apply btn bg-ink text-paper hover:bg-accent;
+  }
+
+  .btn-ghost {
+    @apply btn border border-ink/15 text-ink hover:border-ink/40;
+  }
+
+  .btn-icon {
+    @apply grid h-11 w-11 place-items-center rounded-full border border-ink/15 text-muted transition hover:border-ink/40 hover:text-ink;
+  }
 }
 
-.dark .custom-scrollbar::-webkit-scrollbar-track {
-  background: #3a3a3a;
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.dark .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #4ade80;
+.rise {
+  animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: calc(var(--i, 0) * 90ms);
 }
 
-.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #22c55e;
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* For Firefox */
-.custom-scrollbar {
-  scrollbar-width: thin;
-  scrollbar-color: #005c28 #f1f1f1;
+@supports (animation-timeline: view()) {
+  @media screen and (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
+  }
 }
 
-.dark .custom-scrollbar {
-  scrollbar-color: #4ade80 #3a3a3a;
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgb(var(--accent) / 0.55);
+  }
+  80%,
+  100% {
+    box-shadow: 0 0 0 7px rgb(var(--accent) / 0);
+  }
+}
+
+.pulse-dot {
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .rise,
+  .pulse-dot {
+    animation: none;
+  }
+}
+
+@page {
+  size: A4;
+  margin: 14mm 14mm 12mm;
+}
+
+@page cv {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  :root,
+  .dark {
+    --paper: 255 255 255;
+    --surface: 255 255 255;
+    --ink: 17 17 17;
+    --muted: 55 58 55;
+    --faint: 100 104 100;
+    --accent: 0 92 40;
+    --accent-soft: 230 240 233;
+    color-scheme: light;
+  }
+
+  html:not(:has(.cv-sheet)) {
+    font-size: 12px;
+  }
+
+  body {
+    background-image: none;
+  }
+
+  .rise {
+    animation: none;
+  }
+
+  .cv-sheet {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .avoid-break {
+    break-inside: avoid;
+  }
+
+  .keep-with-next {
+    break-after: avoid;
+  }
 }
