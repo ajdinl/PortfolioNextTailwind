@@ -6,7 +6,7 @@ function ProjectCard({ project, index, featured }) {
 
   return (
     <article
-      className={`card group relative flex h-full flex-col p-6 transition duration-300 hover:-translate-y-1 hover:border-ink/25 hover:shadow-[0_18px_40px_-24px_rgb(var(--ink)/0.35)] md:p-8 ${
+      className={`card spotlight group relative flex h-full flex-col p-6 transition duration-300 hover:-translate-y-1 hover:border-ink/25 hover:shadow-[0_18px_40px_-24px_rgb(var(--ink)/0.35)] md:p-8 ${
         featured ? 'md:grid md:grid-cols-12 md:gap-10' : ''
       }`}
     >

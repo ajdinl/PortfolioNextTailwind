@@ -1,5 +1,6 @@
 import '@/styles/globals.css';
 import { Instrument_Serif, Schibsted_Grotesk, JetBrains_Mono } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 import ThemeWrapper from '@/app/_components/ThemeWrapper';
 import db from '@/db.json';
 
@@ -43,6 +44,7 @@ export default function RootLayout({ children }) {
         <html lang='en' suppressHydrationWarning className={`${display.variable} ${sans.variable} ${mono.variable}`}>
             <body>
                 <ThemeWrapper>{children}</ThemeWrapper>
+                <Analytics />
             </body>
         </html>
     );

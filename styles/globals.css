@@ -7,7 +7,7 @@
   --surface: 251 249 244;
   --ink: 21 24 22;
   --muted: 76 81 76;
-  --faint: 120 125 118;
+  --faint: 104 109 102;
   --accent: 0 92 40;
   --accent-soft: 216 233 220;
   color-scheme: light;
@@ -94,6 +94,43 @@
 
   .btn-icon {
     @apply grid h-11 w-11 place-items-center rounded-full border border-ink/15 text-muted transition hover:border-ink/40 hover:text-ink;
+  }
+}
+
+/* Cursor-following glow; coordinates are set by the Spotlight component. */
+.spotlight {
+  position: relative;
+  isolation: isolate;
+}
+
+.spotlight::before,
+.spotlight::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.spotlight::before {
+  z-index: -1;
+  background: radial-gradient(460px circle at var(--spot-x, 50%) var(--spot-y, 50%), rgb(var(--accent) / 0.09), transparent 45%);
+}
+
+.spotlight::after {
+  padding: 1px;
+  background: radial-gradient(260px circle at var(--spot-x, 50%) var(--spot-y, 50%), rgb(var(--accent) / 0.55), transparent 60%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .spotlight:hover::before,
+  .spotlight:hover::after {
+    opacity: 1;
   }
 }
 
@@ -193,7 +230,13 @@
     animation: none;
   }
 
+  .cv-fit {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
   .cv-sheet {
+    transform: none !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }

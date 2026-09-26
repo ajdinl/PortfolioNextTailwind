@@ -6,7 +6,7 @@ export default function Contact({ info }) {
 
   return (
     <section id='contact' className='mx-auto w-full max-w-page px-5 pb-10 md:px-8 print:hidden'>
-      <div className='relative overflow-hidden dark rounded-[2rem] border border-ink/10 bg-surface p-8 text-ink md:p-16'>
+      <div className='spotlight relative overflow-hidden dark rounded-[2rem] border border-ink/10 bg-surface p-8 text-ink md:p-16'>
         <div
           aria-hidden
           className='pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-accent/25 blur-3xl'
@@ -22,7 +22,7 @@ export default function Contact({ info }) {
             Hiring a Rails or React engineer? <em className='text-accent'>Let&apos;s talk.</em>
           </h2>
           <p className='mt-6 max-w-xl text-lg text-muted'>
-            I&apos;m open to full-time roles with product-focused teams. Email is the fastest way to reach me.
+            I&apos;m open to full-time, part-time and contract roles with product-focused teams. Email is the fastest way to reach me.
           </p>
 
           <a
