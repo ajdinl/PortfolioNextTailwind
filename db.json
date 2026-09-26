@@ -5,9 +5,14 @@
     "headline": "I build reliable backends, data integrations and polished frontends for B2B SaaS with Ruby on Rails, React and TypeScript.",
     "cvTagline": "Backend & Full Stack · Ruby on Rails · React · TypeScript",
     "availability": "Open to new opportunities",
+    "engagement": [
+      "Full-time",
+      "Part-time",
+      "Contract"
+    ],
     "yearsOfExperience": "5+",
     "location": "Bosnia & Herzegovina",
-    "timezone": "CET · Remote-ready",
+    "timezone": "CET · Flexible for US hours",
     "email": "ajdinlojic@gmail.com",
     "github": "https://github.com/ajdinl",
     "githubHandle": "ajdinl",

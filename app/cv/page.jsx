@@ -1,7 +1,7 @@
-import QRCode from 'qrcode'
 import db from '@/db.json'
+import FitToWidth from './FitToWidth'
 import { highlightText } from '@components/highlightText'
-import { ArrowUpRight, CheckIcon, DownloadIcon, GitHubIcon, GlobeIcon, LinkedInIcon, MailIcon, PinIcon } from '@components/Icons'
+import { CheckIcon, DownloadIcon, GitHubIcon, GlobeIcon, LinkedInIcon, MailIcon, PinIcon } from '@components/Icons'
 
 const { info } = db
 
@@ -71,15 +71,9 @@ function Role({ employer, employerUrl, role }) {
   )
 }
 
-export default async function CVPage() {
+export default function CVPage() {
   const { about, cvProfile, highlights, skills, career, languages, interests, principles } = db
   const [firstName, ...rest] = info.fullName.split(' ')
-  const qr = await QRCode.toString(info.website, {
-    type: 'svg',
-    margin: 0,
-    errorCorrectionLevel: 'M',
-    color: { dark: '#151816ff', light: '#00000000' },
-  })
   const updated = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
 
   return (
@@ -94,7 +88,7 @@ export default async function CVPage() {
         </a>
       </nav>
 
-      <div className='overflow-x-auto print:overflow-visible'>
+      <FitToWidth>
         <article className='cv-sheet mx-auto flex h-[297mm] w-[210mm] flex-col overflow-hidden bg-paper font-sans text-ink shadow-[0_30px_80px_-30px_rgba(0,0,0,0.45)] print:shadow-none'>
           <header className='dark relative overflow-hidden bg-paper px-11 pb-5 pt-7 text-ink'>
             <div aria-hidden className='absolute -right-20 -top-24 h-72 w-72 rounded-full bg-accent/20 blur-3xl' />
@@ -116,17 +110,16 @@ export default async function CVPage() {
                   <span className='text-muted'> · {info.cvTagline}</span>
                 </p>
               </div>
-              <a
-                href={info.website}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='mt-1 flex shrink-0 flex-col items-center gap-1.5 rounded-xl bg-[#f5f2eb] p-2.5 text-[#151816]'
-              >
-                <span className='block h-[74px] w-[74px]' dangerouslySetInnerHTML={{ __html: qr }} />
-                <span className='inline-flex items-center gap-0.5 font-mono text-[8px] uppercase'>
-                  Portfolio <ArrowUpRight className='h-2.5 w-2.5' />
-                </span>
-              </a>
+              <dl className='mt-1 w-[196px] shrink-0 space-y-2 rounded-xl border border-ink/15 bg-ink/[0.04] p-3.5 text-[10px] leading-snug'>
+                <div>
+                  <dt className='text-[9px] font-semibold uppercase tracking-[0.1em] text-accent'>Open to</dt>
+                  <dd className='mt-0.5 font-medium'>{info.engagement.join(' · ')}</dd>
+                </div>
+                <div>
+                  <dt className='text-[9px] font-semibold uppercase tracking-[0.1em] text-accent'>Work</dt>
+                  <dd className='mt-0.5 font-medium'>Remote · {info.timezone}</dd>
+                </div>
+              </dl>
             </div>
             <ul className='relative mt-4 flex flex-wrap gap-x-4 gap-y-1.5 text-[10px] text-muted'>
               <Contact href={`mailto:${info.email}`} icon={MailIcon}>
@@ -143,7 +136,7 @@ export default async function CVPage() {
               </Contact>
               <li className='inline-flex items-center gap-1.5'>
                 <PinIcon className='h-3 w-3 text-accent' />
-                {info.location} · {info.timezone}
+                {info.location}
               </li>
             </ul>
           </header>
@@ -229,7 +222,7 @@ export default async function CVPage() {
             <span>Updated {updated}</span>
           </footer>
         </article>
-      </div>
+      </FitToWidth>
     </div>
   )
 }

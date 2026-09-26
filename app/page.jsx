@@ -6,6 +6,7 @@ import Skills from '@components/Skills'
 import About from '@components/About'
 import Contact from '@components/Contact'
 import Footer from '@components/Footer'
+import Spotlight from '@components/Spotlight'
 import db from '@/db.json'
 
 export default function Page() {
@@ -41,6 +42,7 @@ export default function Page() {
         <Contact info={info} />
       </main>
       <Footer info={info} />
+      <Spotlight />
     </>
   )
 }
