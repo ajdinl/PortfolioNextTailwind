@@ -30,7 +30,7 @@
   --surface: 248 246 241;
   --ink: 21 24 22;
   --muted: 70 75 70;
-  --faint: 118 123 116;
+  --faint: 104 109 102;
   --accent: 0 92 40;
   --accent-soft: 232 241 235;
   color-scheme: light;
@@ -39,9 +39,12 @@
 
 .cv-sheet .dark {
   --paper: 21 24 22;
+  --surface: 30 34 31;
   --ink: 240 238 231;
   --muted: 186 189 181;
+  --faint: 140 145 137;
   --accent: 110 226 160;
+  --accent-soft: 24 46 34;
 }
 
 @layer base {

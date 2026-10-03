@@ -1,5 +1,5 @@
 import Section from './Section'
-import { ArrowUpRight } from './Icons'
+import { ArrowUpRight, GitHubIcon } from './Icons'
 
 function ProjectCard({ project, index, featured }) {
   const { name, url, domain, role, via, period, summary, stack } = project
@@ -48,7 +48,39 @@ function ProjectCard({ project, index, featured }) {
   )
 }
 
-export default function Work({ projects }) {
+function SideProject({ project }) {
+  const { name, kind, summary, stack, demo, code } = project
+  const link = 'inline-flex items-center gap-1.5 text-sm font-medium text-ink underline decoration-ink/20 underline-offset-4 transition hover:text-accent hover:decoration-accent'
+
+  return (
+    <article className='card spotlight flex h-full flex-col p-6 md:p-7'>
+      <p className='font-mono text-xs text-faint'>{kind}</p>
+      <h4 className='mt-3 font-display text-3xl leading-none tracking-tight md:text-4xl'>{name}</h4>
+      <p className='mt-4 leading-relaxed text-muted'>{summary}</p>
+      <ul className='mt-5 flex flex-wrap gap-1.5' aria-label={`${name} tech stack`}>
+        {stack.map((tech) => (
+          <li key={tech} className='chip'>
+            {tech}
+          </li>
+        ))}
+      </ul>
+      <div className='mt-auto flex flex-wrap gap-x-5 gap-y-2 pt-6'>
+        {demo && (
+          <a href={demo} target='_blank' rel='noopener noreferrer' className={link}>
+            Live demo
+            <ArrowUpRight className='h-3.5 w-3.5' />
+          </a>
+        )}
+        <a href={code} target='_blank' rel='noopener noreferrer' className={link}>
+          <GitHubIcon className='h-3.5 w-3.5' />
+          Source code
+        </a>
+      </div>
+    </article>
+  )
+}
+
+export default function Work({ projects, sideProjects = [] }) {
   return (
     <Section
       id='work'
@@ -69,6 +101,24 @@ export default function Work({ projects }) {
           </div>
         ))}
       </div>
+
+      {sideProjects.length > 0 && (
+        <div className='mt-16 md:mt-20'>
+          <div className='mb-6 flex flex-wrap items-end justify-between gap-3'>
+            <h3 className='font-display text-3xl leading-none tracking-tight md:text-4xl'>
+              Side <em>projects</em>
+            </h3>
+            <p className='max-w-sm text-sm text-muted'>Personal and pro bono work with public code you can read.</p>
+          </div>
+          <div className='grid gap-4 md:grid-cols-2 md:gap-5'>
+            {sideProjects.map((project) => (
+              <div key={project.name} className='reveal'>
+                <SideProject project={project} />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </Section>
   )
 }

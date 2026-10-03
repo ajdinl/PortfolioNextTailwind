@@ -10,7 +10,7 @@ import Spotlight from '@components/Spotlight'
 import db from '@/db.json'
 
 export default function Page() {
-  const { info, about, principles, interests, languages, highlights, skills, projects, career } = db
+  const { info, about, principles, interests, languages, highlights, skills, projects, sideProjects, career } = db
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -28,14 +28,14 @@ export default function Page() {
 
   return (
     <>
-      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />
       <a href='#main' className='sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-paper'>
         Skip to content
       </a>
       <Nav info={info} />
       <main id='main' className='flex flex-col'>
         <Hero info={info} highlights={highlights} />
-        <Work projects={projects} />
+        <Work projects={projects} sideProjects={sideProjects} />
         <Experience career={career} />
         <Skills skills={skills} />
         <About about={about} principles={principles} interests={interests} languages={languages} />

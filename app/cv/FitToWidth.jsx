@@ -22,9 +22,8 @@ export default function FitToWidth({ children }) {
     }
 
     fit()
-    const observer = new ResizeObserver(fit)
-    observer.observe(container)
-    return () => observer.disconnect()
+    window.addEventListener('resize', fit)
+    return () => window.removeEventListener('resize', fit)
   }, [])
 
   return (

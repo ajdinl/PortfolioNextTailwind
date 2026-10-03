@@ -5,11 +5,22 @@ import { CheckIcon, DownloadIcon, GitHubIcon, GlobeIcon, LinkedInIcon, MailIcon,
 
 const { info } = db
 
-export const metadata = {
-  title: `CV | ${info.fullName}, ${info.title}`,
-  description: `${info.fullName}, ${info.title}. ${info.cvTagline}. ${info.yearsOfExperience} years of experience.`,
-  alternates: { canonical: '/cv' },
+const cvTitle = `CV | ${info.fullName}, ${info.title}`
+const cvDescription = `${info.fullName}, ${info.title}. ${info.cvTagline}. ${info.yearsOfExperience} years of experience.`
+
+export async function generateMetadata(_props, parent) {
+  const { openGraph, twitter } = await parent
+
+  return {
+    title: cvTitle,
+    description: cvDescription,
+    alternates: { canonical: '/cv' },
+    openGraph: { ...openGraph, title: cvTitle, description: cvDescription, url: '/cv' },
+    twitter: { ...twitter, title: cvTitle, description: cvDescription },
+  }
 }
+
+export const viewport = { themeColor: '#e7e3da' }
 
 const stripProtocol = (url) => url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')
 
@@ -74,6 +85,7 @@ function Role({ employer, employerUrl, role }) {
 export default function CVPage() {
   const { about, cvProfile, highlights, skills, career, languages, interests, principles } = db
   const [firstName, ...rest] = info.fullName.split(' ')
+  const [zone, ...hours] = info.timezone.split(' · ')
   const updated = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
 
   return (
@@ -88,7 +100,8 @@ export default function CVPage() {
         </a>
       </nav>
 
-      <FitToWidth>
+      <main>
+        <FitToWidth>
         <article className='cv-sheet mx-auto flex h-[297mm] w-[210mm] flex-col overflow-hidden bg-paper font-sans text-ink shadow-[0_30px_80px_-30px_rgba(0,0,0,0.45)] print:shadow-none'>
           <header className='dark relative overflow-hidden bg-paper px-11 pb-5 pt-7 text-ink'>
             <div aria-hidden className='absolute -right-20 -top-24 h-72 w-72 rounded-full bg-accent/20 blur-3xl' />
@@ -117,7 +130,10 @@ export default function CVPage() {
                 </div>
                 <div>
                   <dt className='text-[9px] font-semibold uppercase tracking-[0.1em] text-accent'>Work</dt>
-                  <dd className='mt-0.5 font-medium'>Remote · {info.timezone}</dd>
+                  <dd className='mt-0.5 font-medium'>
+                    Remote · {zone}
+                    <span className='block'>{hours.join(' · ')}</span>
+                  </dd>
                 </div>
               </dl>
             </div>
@@ -151,7 +167,7 @@ export default function CVPage() {
           </section>
 
           <div className='grid min-h-0 flex-1 grid-cols-[1fr_222px]'>
-            <main className='relative pb-3 pl-11 pr-7 pt-4'>
+            <div data-cv-column className='relative pb-3 pl-11 pr-7 pt-4'>
               <Heading>Profile</Heading>
               <p className='text-[10.75px] leading-[1.55] text-muted'>{highlightText(cvProfile ?? about.join(' '))}</p>
 
@@ -165,9 +181,9 @@ export default function CVPage() {
                   )}
                 </div>
               </div>
-            </main>
+            </div>
 
-            <aside className='relative border-l border-ink/10 bg-surface pb-3 pl-6 pr-8 pt-4'>
+            <aside data-cv-column className='relative border-l border-ink/10 bg-surface pb-3 pl-6 pr-8 pt-4'>
               <Heading>Skills</Heading>
               <div className='space-y-2.5'>
                 {skills.map((group) => (
@@ -222,7 +238,8 @@ export default function CVPage() {
             <span>Updated {updated}</span>
           </footer>
         </article>
-      </FitToWidth>
+        </FitToWidth>
+      </main>
     </div>
   )
 }

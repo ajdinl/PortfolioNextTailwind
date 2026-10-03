@@ -15,13 +15,11 @@
     "timezone": "CET · Flexible for US hours",
     "email": "ajdinlojic@gmail.com",
     "github": "https://github.com/ajdinl",
-    "githubHandle": "ajdinl",
     "linkedin": "https://www.linkedin.com/in/ajdin-lojic/",
-    "linkedinHandle": "ajdin-lojic",
     "website": "https://ajdinlojic.vercel.app",
     "cv": "/Ajdin-Lojic-CV.pdf",
     "current": {
-      "role": "Backend Engineer",
+      "role": "Software Engineer (Backend)",
       "employer": "Klika",
       "client": "Spiro",
       "clientUrl": "https://spiro.ai"
@@ -43,7 +41,7 @@
     },
     {
       "title": "Clear communication",
-      "text": "Used to remote, async teams working with clients across time zones."
+      "text": "I work directly with Customer Success and customers, and I'm used to remote, async teams across time zones."
     }
   ],
   "interests": [
@@ -63,16 +61,6 @@
       "value": "7+",
       "label": "third-party integrations across ERP, e-commerce and ad platforms"
     }
-  ],
-  "integrations": [
-    "Epicor Prophet 21 (P21)",
-    "Epicor",
-    "NetSuite",
-    "Shopify",
-    "Meta (Facebook & Instagram)",
-    "Google Ads",
-    "Snapchat",
-    "Twilio"
   ],
   "skills": [
     {
@@ -149,7 +137,7 @@
       "name": "Spiro",
       "url": "https://spiro.ai",
       "domain": "AI-powered CRM for 200+ manufacturers & distributors",
-      "role": "Backend Engineer",
+      "role": "Software Engineer (Backend)",
       "via": "Klika",
       "period": "2026 – now",
       "summary": "Backend services and ERP / e-commerce integrations (Epicor P21, NetSuite, Shopify and direct SQL database syncs), plus internal tools that show integration health per customer.",
@@ -165,7 +153,7 @@
       "name": "WhatCampaign",
       "url": "https://www.whatcampaign.com",
       "domain": "Multi-channel ad campaigns & media planning",
-      "role": "Full Stack Engineer",
+      "role": "Software Engineer (Full Stack)",
       "via": "Klika",
       "period": "2024 – 2025",
       "summary": "Early-stage startup platform for launching ads on Meta (Facebook, Instagram), Google, Snapchat and more from one place, with media plans. Taken from build to pilot with its first clients.",
@@ -181,7 +169,7 @@
       "name": "Texttelligent",
       "url": "https://texttelligent.com/automotive/",
       "domain": "Customer & service texting for car dealerships",
-      "role": "Frontend Engineer",
+      "role": "Software Engineer (Frontend)",
       "via": "Trinity",
       "period": "2024",
       "summary": "Frontend for the automotive product, where dealership sales and service teams talk to customers from one compliant inbox.",
@@ -196,7 +184,7 @@
       "name": "Experfy",
       "url": "https://www.experfy.com",
       "domain": "Talent marketplace & hiring platform",
-      "role": "Frontend Developer",
+      "role": "Software Developer (Frontend)",
       "period": "2021 – 2023",
       "summary": "My first engineering role: frontend for a platform connecting companies with vetted experts, with responsive interfaces, performance work and API integrations.",
       "stack": [
@@ -208,7 +196,7 @@
     {
       "name": "Scanspire",
       "domain": "Website for a penetration-testing company · Freelance",
-      "role": "Frontend Engineer",
+      "role": "Frontend Engineer (Freelance)",
       "period": "2024 – 2025",
       "summary": "Freelance build of a fast, SEO-friendly Next.js website for a company offering penetration testing and security assessments. Since retired.",
       "stack": [
@@ -216,6 +204,35 @@
         "React",
         "Bootstrap"
       ]
+    }
+  ],
+  "sideProjects": [
+    {
+      "name": "Djeca Sarajeva",
+      "kind": "Pro bono redesign concept",
+      "summary": "Bilingual (Bosnian and English) website concept for a public preschool institution in Sarajevo: kindergartens, enrollment, menus, news and documents in one place.",
+      "stack": [
+        "Next.js",
+        "TypeScript",
+        "next-intl",
+        "Tailwind CSS",
+        "Framer Motion"
+      ],
+      "demo": "https://javna-ustanova-djece-sarajeva.vercel.app",
+      "code": "https://github.com/ajdinl/javna-ustanova-djece-sarajeva"
+    },
+    {
+      "name": "Restaurants",
+      "kind": "Full-stack side project",
+      "summary": "Restaurant management app with role-based auth, menus, tables, reservations and order tracking, built around the Command pattern with validation on both client and server.",
+      "stack": [
+        "Next.js",
+        "React",
+        "MongoDB",
+        "NextAuth",
+        "Tailwind CSS"
+      ],
+      "code": "https://github.com/ajdinl/restaurants"
     }
   ],
   "career": [
@@ -229,15 +246,15 @@
           "clientUrl": "https://spiro.ai",
           "period": "Jan 2026 – Present",
           "details": [
-            "Build backend services and product features for Spiro, an AI-powered CRM used by 200+ manufacturers and distributors, on Ruby on Rails and PostgreSQL",
+            "Build backend services, REST API endpoints and product features for Spiro, an AI-powered CRM used by 200+ manufacturers and distributors, on Ruby on Rails and PostgreSQL",
             "Build and maintain ERP and e-commerce integrations (Epicor P21, NetSuite, Shopify and more), pulling data from customers' SQL databases and syncing customers, orders and products into Spiro",
+            "Work directly with Customer Success and customers to troubleshoot integration and data issues, and turn their feedback into fixes and product improvements",
             "Built internal tools that show integration status and data per customer company, plus automations for recurring integration and operations work",
             "Run asynchronous workflows and scheduled syncs on Sidekiq, using sidekiq-cron and unique job processing to keep high-volume work reliable and idempotent",
-            "Contributed to communication features: Twilio calling and texting for Spiro's mobile app, and email account connections",
             "Integrate AWS (S3, Lambda, ECS, KMS) for file storage, serverless processing and encryption of sensitive customer data, deployed on Heroku",
-            "Resolve production issues across the platform with Sentry monitoring, RSpec and Minitest suites and RuboCop-enforced standards",
-            "Build and tune Elasticsearch indexing and full-text search across accounts, contacts and activity data",
-            "Implement authentication and authorization with Devise, Doorkeeper (OAuth 2) and Pundit policies"
+            "Contributed to communication features: Twilio calling and texting for Spiro's mobile app, and email account connections",
+            "Keep production healthy with Sentry monitoring, RSpec and Minitest suites and RuboCop-enforced standards",
+            "Build and tune Elasticsearch full-text search, and implement authentication and authorization with Devise, Doorkeeper (OAuth 2) and Pundit"
           ],
           "cvBullets": 6
         },

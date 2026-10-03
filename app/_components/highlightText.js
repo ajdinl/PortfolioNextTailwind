@@ -46,7 +46,7 @@ const keywords = [
 const escape = (word) => word.replace(/[.*+?^${}()|[\]\\/]/g, '\\$&')
 
 const highlightRegex = new RegExp(
-  `(${[...keywords].sort((a, b) => b.length - a.length).map(escape).join('|')})`,
+  `(?<!\\w)(${[...keywords].sort((a, b) => b.length - a.length).map(escape).join('|')})(?!\\w)`,
   'g'
 )
 
