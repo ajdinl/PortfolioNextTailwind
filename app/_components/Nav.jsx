@@ -17,7 +17,7 @@ export default function Nav({ info }) {
   return (
     <header className='sticky top-0 z-40 border-b border-ink/10 bg-paper/80 backdrop-blur-md print:hidden'>
       <nav aria-label='Main' className='mx-auto flex h-16 max-w-page items-center justify-between gap-4 px-5 md:px-8'>
-        <a href='#top' className='flex items-center gap-3'>
+        <a href='#top' aria-label={`${info.fullName}, back to top`} className='flex items-center gap-3'>
           <span className='grid h-9 w-9 place-items-center rounded-full bg-ink font-display text-lg text-paper'>
             {initials}
           </span>
