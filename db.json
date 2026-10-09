@@ -223,14 +223,14 @@
     },
     {
       "name": "Restaurants",
-      "kind": "Full-stack side project",
-      "summary": "Restaurant management app with role-based auth, menus, tables, reservations and order tracking, built around the Command pattern with validation on both client and server.",
+      "kind": "Full-stack side project · In progress",
+      "summary": "Multi-tenant restaurant platform for menus, tables, reservations, waiter ordering and a kitchen display, in Bosnian and English. Ruby on Rails 8 API on PostgreSQL with a Next.js frontend, tenant isolation, Pundit authorization and RSpec coverage.",
       "stack": [
+        "Ruby on Rails",
+        "PostgreSQL",
         "Next.js",
-        "React",
-        "MongoDB",
-        "NextAuth",
-        "Tailwind CSS"
+        "TypeScript",
+        "RSpec"
       ],
       "code": "https://github.com/ajdinl/restaurants"
     }
