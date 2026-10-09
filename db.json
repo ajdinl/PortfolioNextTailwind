@@ -223,7 +223,7 @@
     },
     {
       "name": "Restaurants",
-      "kind": "Full-stack side project · In progress",
+      "kind": "Full-stack side project",
       "summary": "Multi-tenant restaurant platform for menus, tables, reservations, waiter ordering and a kitchen display, in Bosnian and English. Ruby on Rails 8 API on PostgreSQL with a Next.js frontend, tenant isolation, Pundit authorization and RSpec coverage.",
       "stack": [
         "Ruby on Rails",
