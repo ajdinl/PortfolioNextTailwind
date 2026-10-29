@@ -29,7 +29,7 @@
     "I'm a Software Engineer with 5+ years of experience shipping production web applications. Today I work on the backend of Spiro, an AI-powered CRM used by 200+ manufacturers and distributors, where I build integrations that sync data from ERP and e-commerce platforms like Epicor P21, NetSuite and Shopify, using Ruby on Rails, PostgreSQL, Sidekiq and AWS.",
     "Before that I integrated Meta, Google and Snapchat ad platforms into a multi-channel campaign product, and I started on the frontend with React and Next.js. That path makes me comfortable owning a feature end to end: data model, API, background jobs, UI and tests."
   ],
-  "cvProfile": "Software Engineer with 5+ years building B2B SaaS and third-party integrations. On the backend of Spiro, an AI-powered CRM used by 200+ manufacturers and distributors, I sync data from Epicor P21, NetSuite and Shopify with Ruby on Rails, PostgreSQL, Sidekiq and AWS. Previously integrated Meta, Google and Snapchat ad platforms, and started on the frontend with React and Next.js.",
+  "cvProfile": "Software Engineer with 5+ years building B2B SaaS and third-party integrations for clients in the US, UK and UAE. On the backend of Spiro, an AI-powered CRM used by 200+ manufacturers and distributors, I sync data from Epicor P21, NetSuite and Shopify with Ruby on Rails, PostgreSQL, Sidekiq and AWS. Previously integrated Meta, Google and Snapchat ad platforms, and started on the frontend with React and Next.js.",
   "principles": [
     {
       "title": "End-to-end ownership",
@@ -99,8 +99,10 @@
         "PostgreSQL",
         "Redis",
         "Elasticsearch",
+        "MongoDB",
         "AWS (S3, Lambda, ECS, KMS)",
         "Heroku",
+        "Docker",
         "CI/CD",
         "Sentry"
       ]
@@ -321,7 +323,7 @@
             "Used Next.js server-side rendering (SSR) and static site generation (SSG) for fast first loads and SEO",
             "Optimized performance with code splitting, lazy loading and responsive, mobile-first layouts"
           ],
-          "cvBullets": 1
+          "cvBullets": 2
         }
       ]
     }
@@ -329,7 +331,7 @@
   "languages": [
     {
       "name": "English",
-      "level": "Professional working proficiency"
+      "level": "Fluent, C1"
     },
     {
       "name": "Bosnian",

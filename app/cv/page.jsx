@@ -115,7 +115,8 @@ export default function CVPage() {
                   <span className='h-1.5 w-1.5 rounded-full bg-accent' />
                   {info.availability}
                 </p>
-                <h1 className='mt-3 font-display text-[62px] leading-[0.92] tracking-[-0.01em]'>
+                {/* Wider word gap so PDF text extraction (ATS parsers) reads "Ajdin Lojić", not "AjdinLojić" */}
+                <h1 className='mt-3 font-display text-[62px] leading-[0.92] tracking-[-0.01em] [word-spacing:0.12em]'>
                   {firstName} <em className='text-accent'>{rest.join(' ')}</em>
                 </h1>
                 <p className='mt-2.5 text-[13px]'>

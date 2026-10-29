@@ -29,7 +29,7 @@ export default function About({ about, principles, interests, languages }) {
           <dl className='mt-6 space-y-2 text-sm text-muted'>
             <div>
               <dt className='eyebrow mr-2 inline'>Languages</dt>
-              <dd className='inline'>{languages.map((language) => `${language.name} (${language.level.toLowerCase()})`).join(' · ')}</dd>
+              <dd className='inline'>{languages.map((language) => `${language.name} (${language.level})`).join(' · ')}</dd>
             </div>
             <div>
               <dt className='eyebrow mr-2 inline'>Off the clock</dt>
