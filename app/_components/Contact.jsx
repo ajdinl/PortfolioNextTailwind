@@ -6,7 +6,7 @@ export default function Contact({ info }) {
 
   return (
     <section id='contact' className='mx-auto w-full max-w-page px-5 pb-10 md:px-8 print:hidden'>
-      <div className='spotlight relative overflow-hidden dark rounded-[2rem] border border-ink/10 bg-surface p-8 text-ink md:p-16'>
+      <div className='spotlight relative overflow-hidden rounded-[2rem] border border-ink/10 bg-surface p-8 text-ink md:p-16'>
         <div
           aria-hidden
           className='pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-accent/25 blur-3xl'
