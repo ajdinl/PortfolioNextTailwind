@@ -1,0 +1,493 @@
+/*
+  "Build the page" intro. While html[data-build] is set (motion allowed and JS running),
+  the hero starts as unstyled HTML and Build.jsx adds .b1 to .b8 as the visitor scrolls,
+  one CSS rule at a time. Without data-build the hero renders finished.
+*/
+
+.build {
+  position: relative;
+}
+
+.spacer {
+  display: none;
+}
+
+.panel,
+.overlay,
+.hint {
+  display: none;
+}
+
+/* The hero changes height while it builds, so scroll anchoring would make the page jump. */
+:global(html[data-build]):has(.build:not(.done)) {
+  overflow-anchor: none;
+}
+
+@media screen {
+  :global(html[data-build]) .stage {
+    position: sticky;
+    top: 4rem;
+    transition: color 0.6s ease;
+  }
+
+  /* The unstyled page covers the whole viewport, not just the hero. */
+  :global(html[data-build]) .stage::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: Canvas;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s ease;
+  }
+
+  :global(html[data-build]) .stage:not(.b3)::before {
+    opacity: 1;
+  }
+
+  :global(html[data-build]) .spacer {
+    display: block;
+    height: 85svh;
+  }
+
+  :global(html[data-build]) .panel,
+  :global(html[data-build]) .overlay {
+    display: block;
+  }
+
+  :global(html[data-build]) .hint {
+    display: flex;
+  }
+
+  :global(html[data-build]) .build:not(.done) .stage * {
+    transition:
+      color 0.5s ease,
+      background-color 0.5s ease,
+      border-color 0.5s ease,
+      border-radius 0.5s ease,
+      box-shadow 0.5s ease,
+      padding 0.45s ease,
+      margin 0.45s ease,
+      gap 0.45s ease,
+      height 0.45s ease,
+      font-size 0.55s cubic-bezier(0.2, 0.7, 0.2, 1),
+      letter-spacing 0.55s ease,
+      line-height 0.55s ease;
+  }
+
+  /* Step 0: HTML is still being written, lines appear as they are typed. */
+  :global(html[data-build]) .stage:not(.l1) [data-line='1'],
+  :global(html[data-build]) .stage:not(.l2) [data-line='2'],
+  :global(html[data-build]) .stage:not(.l3) [data-line='3'] {
+    visibility: hidden;
+  }
+
+  /* Before step 1 (fonts): browser default serif everywhere. */
+  :global(html[data-build]) .stage:not(.b1) * {
+    font-family: 'Times New Roman', Times, serif !important;
+  }
+
+  /* Before step 2 (heading): a default h1. */
+  :global(html[data-build]) .stage:not(.b2) .name {
+    font-family: 'Times New Roman', Times, serif !important;
+    font-size: 2em !important;
+    font-weight: 700;
+    line-height: 1.2 !important;
+    letter-spacing: 0 !important;
+  }
+
+  /* Before step 3 (colors): system canvas, inherited text, blue links. */
+  :global(html[data-build]) .stage:not(.b3) {
+    color: CanvasText;
+  }
+
+  :global(html[data-build]) .stage:not(.b3) * {
+    color: inherit !important;
+    background-color: transparent !important;
+    border-color: currentColor !important;
+    box-shadow: none !important;
+    text-decoration-color: currentColor !important;
+  }
+
+  :global(html[data-build]) .stage:not(.b3) a {
+    color: LinkText !important;
+  }
+
+  /* Before step 4 (layout): everything stacks in normal flow. */
+  :global(html[data-build]) .stage:not(.b4) .grid {
+    display: block !important;
+  }
+
+  :global(html[data-build]) .stage:not(.b4) .aside {
+    max-width: 26rem;
+    margin-top: 1em;
+  }
+
+  /* Before step 5 (spacing): default margins and sizes. */
+  :global(html[data-build]) .stage:not(.b5) .hero {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  :global(html[data-build]) .stage:not(.b5) .name,
+  :global(html[data-build]) .stage:not(.b5) .lede,
+  :global(html[data-build]) .stage:not(.b5) .lede ~ p,
+  :global(html[data-build]) .stage:not(.b5) .buttons {
+    margin-top: 0.6em !important;
+  }
+
+  :global(html[data-build]) .stage:not(.b5) .lede {
+    font-size: 1rem !important;
+    line-height: 1.4 !important;
+  }
+
+  :global(html[data-build]) .stage:not(.b5) .lede ~ p,
+  :global(html[data-build]) .stage:not(.b5) .status,
+  :global(html[data-build]) .stage:not(.b5) .buttons,
+  :global(html[data-build]) .stage:not(.b5) .buttons > div {
+    gap: 0.25em 0.75em !important;
+  }
+
+  /* Before step 6 (buttons): the actions are plain underlined links. */
+  :global(html[data-build]) .stage:not(.b6) .buttons a {
+    height: auto !important;
+    width: auto !important;
+    flex: none !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background-color: transparent !important;
+    text-decoration: underline !important;
+    font-size: 1rem !important;
+  }
+
+  :global(html[data-build]) .stage.b3:not(.b6) .buttons a {
+    color: rgb(var(--accent)) !important;
+  }
+
+  /* Before step 7 (card): the aside is bare text. */
+  :global(html[data-build]) .stage:not(.b7) .aside,
+  :global(html[data-build]) .stage:not(.b7) .aside * {
+    border-width: 0 !important;
+    border-radius: 0 !important;
+    background-color: transparent !important;
+  }
+
+  :global(html[data-build]) .stage:not(.b7) .aside > div,
+  :global(html[data-build]) .stage:not(.b7) .aside dl > div {
+    padding: 0.2em 0 !important;
+  }
+
+  :global(html[data-build]) .stage:not(.b7) .aside dt {
+    font-size: 1.4em !important;
+  }
+
+  /* Before step 8 (polish): no status pill, no pulse. */
+  :global(html[data-build]) .stage:not(.b8) .status > p:first-child {
+    padding: 0 !important;
+    border-width: 0 !important;
+    background-color: transparent !important;
+  }
+
+  :global(html[data-build]) .stage:not(.b8) :global(.pulse-dot) {
+    display: none;
+  }
+}
+
+/* ---------- Editor panel ---------- */
+
+.panel {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 30;
+  width: 23rem;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 0.1);
+  border-radius: 14px;
+  background: rgb(20 23 21 / 0.96);
+  box-shadow: 0 24px 60px -20px rgb(0 0 0 / 0.45);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #e9e7df;
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+  pointer-events: none;
+}
+
+.panel[data-visible='true'] {
+  opacity: 1;
+  transform: none;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid rgb(255 255 255 / 0.08);
+  color: #8a8f88;
+}
+
+.tabs span {
+  padding: 8px 14px;
+  border-right: 1px solid rgb(255 255 255 / 0.08);
+}
+
+.tabs span[data-active='true'] {
+  background: rgb(255 255 255 / 0.05);
+  color: #e9e7df;
+}
+
+.code {
+  height: 8.6em;
+  margin: 0;
+  padding: 12px 14px;
+  overflow: hidden;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font: inherit;
+}
+
+.code::after {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 1.1em;
+  margin-left: 1px;
+  vertical-align: text-bottom;
+  background: #6ee2a0;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.code :global(.t-sel) {
+  color: #f2c98a;
+}
+
+.code :global(.t-prop) {
+  color: #8cc8ff;
+}
+
+.code :global(.t-val) {
+  color: #6ee2a0;
+}
+
+.code :global(.t-tag) {
+  color: #f29b8a;
+}
+
+.code :global(.t-dim) {
+  color: #8a8f88;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border-top: 1px solid rgb(255 255 255 / 0.08);
+  color: #8a8f88;
+}
+
+.footer b {
+  font-weight: 400;
+}
+
+.footer[data-done='true'] b {
+  color: #6ee2a0;
+}
+
+.footer[data-waiting='true'] b {
+  color: #e9e7df;
+  animation: pulse-text 1.4s ease-in-out infinite;
+}
+
+@keyframes pulse-text {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* ---------- First-scroll prompt ---------- */
+
+.hint {
+  position: fixed;
+  left: 50%;
+  bottom: 16svh;
+  z-index: 30;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 24px 14px 16px;
+  border: 1px solid rgb(var(--ink) / 0.14);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgb(var(--ink) / 0.07), rgb(var(--ink) / 0.02));
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  backdrop-filter: blur(16px) saturate(1.4);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.35),
+    0 18px 40px -20px rgb(0 0 0 / 0.35);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  white-space: nowrap;
+  color: rgb(var(--ink));
+  opacity: 0;
+  transform: translate(-50%, 16px);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+  pointer-events: none;
+}
+
+.hint[data-visible='true'] {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  transition-delay: 0.5s;
+  animation: float 3s ease-in-out 1s infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -6px;
+  }
+}
+
+.mouse {
+  position: relative;
+  width: 20px;
+  height: 30px;
+  border: 2px solid rgb(var(--ink) / 0.7);
+  border-radius: 999px;
+}
+
+.mouse i {
+  position: absolute;
+  left: 50%;
+  top: 5px;
+  width: 3px;
+  height: 6px;
+  margin-left: -1.5px;
+  border-radius: 999px;
+  background: rgb(var(--ink));
+  animation: wheel 1.6s cubic-bezier(0.5, 0, 0.3, 1) infinite;
+}
+
+@keyframes wheel {
+  0% {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  20% {
+    opacity: 1;
+  }
+  80%,
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.meter {
+  position: relative;
+  flex: 1;
+  height: 3px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.1);
+}
+
+.meter i {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: #6ee2a0;
+  transform-origin: left;
+  transform: scaleX(var(--progress, 0));
+}
+
+@media (max-width: 639px) {
+  .hint {
+    bottom: 13.5rem;
+    font-size: 0.95rem;
+  }
+
+  .panel {
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    width: auto;
+    font-size: 11px;
+  }
+
+  .code {
+    height: 7.4em;
+    padding: 9px 12px;
+  }
+}
+
+/* ---------- DevTools-style box model highlight ---------- */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 29;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.overlay[data-visible='true'] {
+  opacity: 1;
+}
+
+.overlay > div {
+  position: fixed;
+}
+
+.margin {
+  border-color: rgb(246 178 107 / 0.55);
+}
+
+.padding {
+  border-color: rgb(147 196 125 / 0.6);
+}
+
+.content {
+  background: rgb(111 168 220 / 0.45);
+}
+
+.label {
+  position: fixed;
+  padding: 3px 7px;
+  border-radius: 4px;
+  background: #202124;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.3);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 11px;
+  white-space: nowrap;
+  color: #e8eaed;
+}
+
+.label em {
+  font-style: normal;
+  color: #f29b8a;
+}
+
+.label span {
+  color: #9aa0a6;
+}

@@ -2,7 +2,7 @@ import Section from './Section'
 
 export default function Skills({ skills }) {
   return (
-    <Section id='skills' index='03' label='Skills' title='Toolbox' className='print:order-2'>
+    <Section id='skills' index='04' label='Skills' title='Toolbox' className='print:order-2'>
       <div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-3 print:grid-cols-2 print:gap-x-6 print:gap-y-1.5'>
         {skills.map((group, index) => (
           <div key={group.group} className={`${index === skills.length - 1 && skills.length % 2 ? 'sm:col-span-2' : ''} reveal card spotlight avoid-break p-6 print:border-0 print:p-0`}>

@@ -30,7 +30,7 @@ function Role({ role }) {
 
 export default function Experience({ career }) {
   return (
-    <Section id='experience' index='02' label='Experience' title='Experience' className='print:order-3'>
+    <Section id='experience' index='03' label='Experience' title='Experience' className='print:order-3'>
       <ol className='space-y-14 print:space-y-2.5'>
         {career.map((job) => (
           <li key={job.employer} className='reveal grid gap-6 md:grid-cols-12 md:gap-10 print:block'>

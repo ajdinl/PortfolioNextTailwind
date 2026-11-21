@@ -17,7 +17,7 @@ export default function Contact({ info }) {
         />
 
         <div className='relative'>
-          <p className='font-mono text-xs uppercase tracking-[0.18em] text-faint'>05 / Contact</p>
+          <p className='font-mono text-xs uppercase tracking-[0.18em] text-faint'>06 / Contact</p>
           <h2 className='mt-5 max-w-3xl font-display text-5xl leading-[0.95] tracking-tight md:text-7xl'>
             Hiring a Rails or React engineer? <em className='text-accent'>Let&apos;s talk.</em>
           </h2>

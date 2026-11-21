@@ -62,6 +62,74 @@
       "label": "third-party integrations across ERP, e-commerce and ad platforms"
     }
   ],
+  "path": [
+    {
+      "layer": "Interface",
+      "year": "2021",
+      "employer": "Experfy",
+      "period": "Aug 2021 – Dec 2023",
+      "title": "Starting at the surface",
+      "text": "My first engineering role: the React and Ember frontend of a talent marketplace and hiring platform, with responsive interfaces, page speed work and API integrations.",
+      "stack": [
+        "React",
+        "Ember",
+        "JavaScript"
+      ]
+    },
+    {
+      "layer": "Components",
+      "year": "2024",
+      "employer": "Texttelligent",
+      "via": "Trinity",
+      "period": "Feb 2024 – Aug 2024",
+      "title": "Getting closer to the API",
+      "text": "Next.js and TypeScript apps that let car dealerships text their customers, built on a consistent Material UI component system and API contracts agreed with backend engineers.",
+      "stack": [
+        "Next.js",
+        "TypeScript",
+        "Material UI",
+        "Figma"
+      ]
+    },
+    {
+      "layer": "API",
+      "year": "2024",
+      "employer": "WhatCampaign",
+      "via": "Klika",
+      "period": "Sep 2024 – Dec 2025",
+      "title": "Crossing into the backend",
+      "text": "Full stack on an ad campaign startup: Rails APIs, a React and TypeScript frontend and integrations with Meta, Google and Snapchat. Taken from early development to a pilot with its first clients.",
+      "stack": [
+        "Ruby on Rails",
+        "React",
+        "TypeScript",
+        "Redis",
+        "Action Cable"
+      ]
+    },
+    {
+      "layer": "Jobs & data",
+      "year": "2026",
+      "employer": "Spiro",
+      "via": "Klika",
+      "period": "Jan 2026 – Present",
+      "title": "Down to the data",
+      "text": "Backend for Spiro, an AI-powered CRM used by 200+ manufacturers and distributors. I build the integrations that sync customers, orders and products from Epicor P21, NetSuite, Shopify and customer SQL databases.",
+      "stack": [
+        "Ruby on Rails",
+        "PostgreSQL",
+        "Sidekiq",
+        "Elasticsearch",
+        "AWS"
+      ]
+    },
+    {
+      "layer": "Whole stack",
+      "year": "Today",
+      "title": "Pixel to database",
+      "text": "That path is why I am comfortable owning a feature end to end: data model, API, background jobs, UI and tests."
+    }
+  ],
   "skills": [
     {
       "group": "Backend",

@@ -84,7 +84,7 @@ export default function Work({ projects, sideProjects = [] }) {
   return (
     <Section
       id='work'
-      index='01'
+      index='02'
       label='Work'
       title={
         <>

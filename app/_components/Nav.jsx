@@ -2,6 +2,7 @@ import ThemeToggle from './ThemeToggle'
 import { DownloadIcon } from './Icons'
 
 const links = [
+  { href: '#path', label: 'Path' },
   { href: '#work', label: 'Work' },
   { href: '#experience', label: 'Experience' },
   { href: '#skills', label: 'Skills' },
@@ -43,6 +44,7 @@ export default function Nav({ info }) {
           </a>
         </div>
       </nav>
+      <span aria-hidden className='scroll-progress' />
     </header>
   )
 }

@@ -3,7 +3,7 @@ import { highlightText } from './highlightText'
 
 export default function About({ about, principles, interests, languages }) {
   return (
-    <Section id='about' index='04' label='About' title='About me' className='print:order-1'>
+    <Section id='about' index='05' label='About' title='About me' className='print:order-1'>
       <div className='grid gap-12 md:grid-cols-12 md:gap-10 print:block'>
         <div className='space-y-6 text-xl leading-relaxed text-muted md:col-span-7 md:text-2xl md:leading-relaxed print:space-y-1 print:text-[0.82rem] print:leading-snug'>
           {about.map((paragraph, index) => (

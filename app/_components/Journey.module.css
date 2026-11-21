@@ -1,0 +1,660 @@
+/* Scroll-driven "down the stack" story. Journey.jsx sets the variables from scroll position. */
+
+.journey {
+  --chapter-scroll: 40svh;
+  --stage-top: 4rem;
+  position: relative;
+  height: calc(var(--chapters) * var(--chapter-scroll) + 100svh - var(--stage-top));
+}
+
+.stage {
+  position: sticky;
+  top: var(--stage-top);
+  height: calc(100svh - var(--stage-top));
+  overflow: clip;
+}
+
+/* ---------- Text column ---------- */
+
+.chapters {
+  display: grid;
+}
+
+.chapter {
+  grid-area: 1 / 1;
+  opacity: 0;
+  transform: translateY(14px);
+  pointer-events: none;
+  transition:
+    opacity 0.45s ease,
+    transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.chapter[data-active='true'] {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.rail {
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.rail::before,
+.rail::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 0.6rem;
+  bottom: 0.6rem;
+  width: 1px;
+  background: rgb(var(--ink) / 0.12);
+}
+
+.rail::after {
+  background: rgb(var(--accent));
+  transform-origin: top;
+  transform: scaleY(var(--p, 0));
+}
+
+.railItem {
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.3rem 0;
+  font-size: 0.875rem;
+  color: rgb(var(--faint));
+  transition: color 0.3s ease;
+}
+
+.railItem::before {
+  content: '';
+  position: absolute;
+  left: calc(-1.25rem);
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  margin-top: -3.5px;
+  border-radius: 999px;
+  border: 1px solid rgb(var(--ink) / 0.25);
+  background: rgb(var(--paper));
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.railItem:hover {
+  color: rgb(var(--ink));
+}
+
+.railItem[data-state='done']::before {
+  border-color: rgb(var(--accent));
+  background: rgb(var(--accent));
+}
+
+.railItem[aria-current='step'] {
+  color: rgb(var(--ink));
+}
+
+.railItem[aria-current='step']::before {
+  border-color: rgb(var(--accent));
+  background: rgb(var(--accent));
+  transform: scale(1.5);
+}
+
+.railYear {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.72rem;
+}
+
+/* ---------- 3D scene ---------- */
+
+.scene {
+  --w: 340px;
+  --h: 230px;
+  --gap: 118px;
+  position: relative;
+  height: 100%;
+  min-height: 240px;
+  perspective: 2200px;
+}
+
+.rig {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-style: preserve-3d;
+  transform: translateY(var(--lift, 0px)) scale(var(--zoom, 1)) rotateX(var(--rx, 0deg)) rotateZ(var(--rz, 0deg));
+}
+
+.layer {
+  --z: calc(min(var(--s, 0), var(--i)) * var(--gap) * -1 - var(--i) * 0.5px);
+  position: absolute;
+  left: calc(var(--w) / -2);
+  top: calc(var(--h) / -2);
+  width: var(--w);
+  height: var(--h);
+  transform-style: preserve-3d;
+  transform: translateZ(var(--z));
+}
+
+.face {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgb(var(--ink) / 0.14);
+  background: rgb(var(--surface));
+  box-shadow:
+    0 0 0 1px rgb(var(--accent) / calc(var(--on, 0) * 0.85)),
+    0 30px 60px -30px rgb(var(--accent) / calc(var(--on, 0) * 0.55)),
+    0 1px 0 rgb(var(--ink) / 0.04);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 10.5px;
+  line-height: 1.2;
+  color: rgb(var(--muted));
+  transition: box-shadow 0.2s linear;
+}
+
+.face > :not(.tag) {
+  opacity: calc(0.38 + var(--on, 0) * 0.62);
+}
+
+.tag {
+  position: absolute;
+  right: 12px;
+  top: 9px;
+  z-index: 1;
+  font-size: 9.5px;
+  letter-spacing: 0.04em;
+  color: rgb(var(--accent) / calc(0.55 + var(--on, 0) * 0.45));
+}
+
+[data-layer='interface'] .tag {
+  display: none;
+}
+
+.floor {
+  position: absolute;
+  left: calc(var(--w) * -0.75);
+  top: calc(var(--h) * -0.75);
+  width: calc(var(--w) * 1.5);
+  height: calc(var(--h) * 1.5);
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgb(var(--ink) / 0.16), transparent);
+  opacity: var(--tilt, 0);
+  transform: translateZ(calc(min(var(--s, 0), 4) * var(--gap) * -1 - 60px));
+}
+
+/* Guide walls: their edges draw the dashed posts between a layer and the one above it. */
+.wallSide,
+.wallFront {
+  --rise: calc(clamp(0, var(--s, 0) - var(--i) + 1, 1) * var(--gap));
+  position: absolute;
+  left: 0;
+  pointer-events: none;
+  opacity: var(--tilt, 0);
+}
+
+.wallSide {
+  top: 0;
+  width: var(--rise);
+  height: 100%;
+  border-top: 1px dashed rgb(var(--ink) / 0.28);
+  transform-origin: left center;
+  transform: rotateY(-90deg);
+}
+
+.wallFront {
+  bottom: 0;
+  width: 100%;
+  height: var(--rise);
+  border-right: 1px dashed rgb(var(--ink) / 0.28);
+  transform-origin: bottom center;
+  transform: rotateX(-90deg);
+}
+
+/* Packets travelling up the outer posts once the backend is in play. */
+.wallSide i,
+.wallFront i {
+  position: absolute;
+  opacity: var(--flow, 0);
+  animation: flow 0.9s linear infinite;
+}
+
+.wallSide i {
+  left: 0;
+  right: 0;
+  top: -1px;
+  height: 2px;
+  background: repeating-linear-gradient(to right, rgb(var(--accent)) 0 5px, transparent 5px 16px);
+}
+
+.wallFront i {
+  top: 0;
+  bottom: 0;
+  right: -1px;
+  width: 2px;
+  background: repeating-linear-gradient(to bottom, rgb(var(--accent)) 0 5px, transparent 5px 16px);
+  animation-name: flow-up;
+}
+
+@keyframes flow {
+  to {
+    background-position-x: 16px;
+  }
+}
+
+/* ---------- Layer faces ---------- */
+
+.ui {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.uiBar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 26px;
+  padding: 0 10px;
+  border-bottom: 1px solid rgb(var(--ink) / 0.1);
+}
+
+.uiBar i {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgb(var(--ink) / 0.18);
+}
+
+.uiBar span {
+  margin-left: 10px;
+  flex: 1;
+  max-width: 170px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgb(var(--ink) / 0.06);
+  font-size: 9px;
+  color: rgb(var(--faint));
+}
+
+.uiBody {
+  display: flex;
+  flex: 1;
+  gap: 12px;
+  padding: 12px;
+}
+
+.uiSide {
+  display: flex;
+  width: 58px;
+  flex-direction: column;
+  gap: 8px;
+  padding-right: 10px;
+  border-right: 1px solid rgb(var(--ink) / 0.08);
+}
+
+.uiSide b,
+.uiMain b {
+  display: block;
+  height: 6px;
+  border-radius: 999px;
+  background: rgb(var(--ink) / 0.12);
+}
+
+.uiSide b:first-child {
+  background: rgb(var(--accent) / 0.55);
+}
+
+.uiMain {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.uiMain .uiTitle {
+  width: 55%;
+  height: 9px;
+  background: rgb(var(--ink) / 0.3);
+}
+
+.uiCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+}
+
+.uiCards span {
+  padding: 9px 7px 14px;
+  border: 1px solid rgb(var(--ink) / 0.1);
+  border-radius: 7px;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 19px;
+  color: rgb(var(--ink));
+}
+
+.uiMain .uiLine {
+  width: 92%;
+}
+
+.uiMain .uiLineShort {
+  width: 64%;
+}
+
+.uiChart {
+  display: flex;
+  height: 34px;
+  align-items: flex-end;
+  gap: 5px;
+  margin-top: 2px;
+  padding-right: 64px;
+}
+
+.uiChart i {
+  flex: 1;
+  border-radius: 3px 3px 0 0;
+  background: rgb(var(--ink) / 0.14);
+}
+
+.uiChart i:last-child {
+  background: rgb(var(--accent) / 0.7);
+}
+
+.uiButton {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgb(var(--ink));
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 10px;
+  color: rgb(var(--paper));
+}
+
+.cursor {
+  position: absolute;
+  left: 52%;
+  top: 46%;
+  width: 11px;
+  height: 15px;
+  background: rgb(var(--ink));
+  clip-path: polygon(0 0, 100% 68%, 55% 70%, 75% 100%, 60% 100%, 42% 74%, 0 100%);
+  animation: point 5s cubic-bezier(0.5, 0, 0.3, 1) infinite;
+}
+
+@keyframes point {
+  0%,
+  12% {
+    transform: translate(0, 0);
+  }
+  42%,
+  58% {
+    transform: translate(108px, 78px);
+  }
+  50% {
+    transform: translate(108px, 78px) scale(0.85);
+  }
+  88%,
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.components {
+  position: absolute;
+  inset: 30px 14px 14px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.components span {
+  display: grid;
+  place-items: center;
+  border: 1px dashed rgb(var(--accent) / 0.5);
+  border-radius: 8px;
+  background: rgb(var(--accent) / 0.05);
+  color: rgb(var(--ink));
+}
+
+.api {
+  position: absolute;
+  inset: 30px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: rgb(var(--ink));
+}
+
+.api li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgb(var(--ink) / 0.07);
+}
+
+.api li:last-child {
+  border: 0;
+  padding: 0;
+}
+
+.api [data-method] {
+  width: 42px;
+  padding: 2px 0;
+  border-radius: 4px;
+  background: rgb(var(--ink) / 0.07);
+  text-align: center;
+  font-size: 9px;
+  color: rgb(var(--muted));
+}
+
+.api [data-method='GET'] {
+  background: rgb(var(--accent) / 0.14);
+  color: rgb(var(--accent));
+}
+
+.jobs {
+  position: absolute;
+  inset: 34px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: rgb(var(--ink));
+}
+
+.jobs li {
+  display: grid;
+  gap: 6px;
+}
+
+.bar {
+  position: relative;
+  height: 5px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgb(var(--ink) / 0.08);
+}
+
+.bar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgb(var(--accent));
+  transform-origin: left;
+  transform: scaleX(var(--done));
+  animation: work 3.2s ease-in-out infinite;
+  animation-delay: var(--d);
+}
+
+@keyframes work {
+  0% {
+    transform: scaleX(0);
+  }
+  70%,
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.data {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  top: 32px;
+  width: calc(100% - 28px);
+  border-collapse: collapse;
+  color: rgb(var(--ink));
+  text-align: left;
+}
+
+.data th {
+  padding: 0 0 7px;
+  font-weight: 400;
+  color: rgb(var(--faint));
+  border-bottom: 1px solid rgb(var(--ink) / 0.14);
+}
+
+.data td {
+  padding: 8px 0;
+  border-bottom: 1px solid rgb(var(--ink) / 0.07);
+}
+
+.data [data-status='synced'] {
+  color: rgb(var(--accent));
+}
+
+.data [data-status='queued'] {
+  color: rgb(var(--faint));
+}
+
+/* ---------- Satellites (third-party systems) ---------- */
+
+.satellites {
+  position: absolute;
+  display: flex;
+  gap: 9px;
+  opacity: var(--in, 0);
+  pointer-events: none;
+}
+
+.satellites[data-side='left'] {
+  right: 100%;
+  top: 50%;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 44px;
+  transform: translate(calc((1 - var(--in, 0)) * -48px), -50%);
+}
+
+.satellites[data-side='bottom'] {
+  top: 100%;
+  left: 50%;
+  padding-top: 40px;
+  transform: translate(-50%, calc((1 - var(--in, 0)) * 48px));
+}
+
+.satellite {
+  position: relative;
+  padding: 6px 11px;
+  border: 1px solid rgb(var(--ink) / 0.16);
+  border-radius: 999px;
+  background: rgb(var(--surface));
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 10.5px;
+  white-space: nowrap;
+  color: rgb(var(--ink));
+  box-shadow: 0 0 0 1px rgb(var(--accent) / calc(var(--on, 0) * 0.6));
+}
+
+.satellite::after {
+  content: '';
+  position: absolute;
+  background-repeat: repeat;
+  animation: flow 0.9s linear infinite;
+}
+
+[data-side='left'] .satellite::after {
+  left: 100%;
+  top: 50%;
+  width: 44px;
+  height: 1px;
+  background-image: repeating-linear-gradient(to right, rgb(var(--accent)) 0 4px, transparent 4px 8px);
+}
+
+[data-side='bottom'] .satellite::after {
+  bottom: 100%;
+  left: 50%;
+  width: 1px;
+  height: 40px;
+  background-image: repeating-linear-gradient(to bottom, rgb(var(--accent)) 0 4px, transparent 4px 8px);
+  animation-name: flow-up;
+}
+
+@keyframes flow-up {
+  to {
+    background-position-y: -16px;
+  }
+}
+
+/* ---------- Static fallback: reduced motion or very short screens ---------- */
+
+@media (prefers-reduced-motion: reduce), (max-height: 539px) {
+  .journey {
+    height: auto;
+  }
+
+  .stage {
+    position: static;
+    height: auto;
+    overflow: visible;
+  }
+
+  .chapters {
+    gap: 2.5rem;
+  }
+
+  .chapter {
+    grid-area: auto;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  .rail {
+    display: none;
+  }
+
+  .scene {
+    height: min(640px, 90svh);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (min-width: 1024px) {
+  .scene {
+    position: sticky;
+    top: 6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor,
+  .bar::after,
+  .wallSide i,
+  .wallFront i,
+  .satellite::after {
+    animation: none;
+  }
+}

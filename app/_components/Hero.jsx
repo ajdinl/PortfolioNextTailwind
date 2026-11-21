@@ -1,14 +1,15 @@
 import { DownloadIcon, GitHubIcon, LinkedInIcon, MailIcon } from './Icons'
+import build from './Build.module.css'
 
 export default function Hero({ info, highlights }) {
   const [firstName, ...rest] = info.fullName.split(' ')
   const { current } = info
 
   return (
-    <section id='top' className='mx-auto w-full max-w-page px-5 pb-16 pt-14 md:px-8 md:pb-24 md:pt-24 print:p-0'>
-      <div className='grid gap-12 lg:grid-cols-12 lg:items-end'>
+    <section className={`${build.hero} mx-auto w-full max-w-page px-5 pb-16 pt-14 md:px-8 md:pb-24 md:pt-24 print:p-0`}>
+      <div className={`${build.grid} grid gap-12 lg:grid-cols-12 lg:items-end`}>
         <div className='lg:col-span-8'>
-          <div className='rise flex flex-wrap items-center gap-x-4 gap-y-2 print:hidden' style={{ '--i': 0 }}>
+          <div className={`${build.status} rise flex flex-wrap items-center gap-x-4 gap-y-2 print:hidden`} style={{ '--i': 0 }} data-line='2' data-build-target='status'>
             <p className='inline-flex items-center gap-2.5 rounded-full border border-accent/30 bg-accent-soft/70 px-3.5 py-1.5 text-sm font-medium text-accent'>
               <span className='pulse-dot h-2 w-2 rounded-full bg-accent' />
               {info.availability}
@@ -17,17 +18,18 @@ export default function Hero({ info, highlights }) {
           </div>
 
           <h1
-            className='rise mt-7 font-display text-[clamp(3.75rem,12vw,8.75rem)] leading-[0.88] tracking-[-0.02em] print:mt-0 print:text-5xl'
+            className={`${build.name} rise mt-7 font-display text-[clamp(3.75rem,12vw,8.75rem)] leading-[0.88] tracking-[-0.02em] print:mt-0 print:text-5xl`}
             style={{ '--i': 1 }}
+            data-build-target='name'
           >
             {firstName} <em className='text-accent'>{rest.join(' ')}</em>
           </h1>
 
-          <p className='rise mt-7 max-w-2xl text-xl leading-snug text-muted md:text-2xl print:mt-2 print:text-base' style={{ '--i': 2 }}>
+          <p className={`${build.lede} rise mt-7 max-w-2xl text-xl leading-snug text-muted md:text-2xl print:mt-2 print:text-base`} style={{ '--i': 2 }} data-line='1' data-build-target='lede'>
             <span className='font-medium text-ink'>{info.title}.</span> {info.headline}
           </p>
 
-          <p className='rise mt-6 flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs uppercase tracking-wider text-faint print:hidden' style={{ '--i': 3 }}>
+          <p className='rise mt-6 flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs uppercase tracking-wider text-faint print:hidden' style={{ '--i': 3 }} data-line='1'>
             <span>{info.yearsOfExperience} years experience</span>
             <span aria-hidden>·</span>
             <span>{info.location}</span>
@@ -40,7 +42,7 @@ export default function Hero({ info, highlights }) {
             {info.website.replace('https://', '')} · {info.location} ({info.timezone})
           </p>
 
-          <div className='rise mt-9 flex flex-wrap items-center gap-3 print:hidden' style={{ '--i': 4 }}>
+          <div className={`${build.buttons} rise mt-9 flex flex-wrap items-center gap-3 print:hidden`} style={{ '--i': 4 }} data-line='2' data-build-target='buttons'>
             <div className='flex w-full gap-3 sm:w-auto'>
               <a href={`mailto:${info.email}`} className='btn-primary flex-1 sm:flex-none'>
                 <MailIcon className='h-4 w-4' />
@@ -62,7 +64,7 @@ export default function Hero({ info, highlights }) {
           </div>
         </div>
 
-        <aside className='rise card spotlight overflow-hidden lg:col-span-4 print:hidden' style={{ '--i': 5 }}>
+        <aside className={`${build.aside} rise card spotlight overflow-hidden lg:col-span-4 print:hidden`} style={{ '--i': 5 }} data-line='3'>
           <div className='border-b border-ink/10 bg-accent-soft/50 p-5'>
             <p className='eyebrow'>Currently</p>
             <p className='mt-2 leading-snug'>

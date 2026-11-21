@@ -1,5 +1,7 @@
 import Nav from '@components/Nav'
 import Hero from '@components/Hero'
+import Build from '@components/Build'
+import Journey from '@components/Journey'
 import Work from '@components/Work'
 import Experience from '@components/Experience'
 import Skills from '@components/Skills'
@@ -9,8 +11,10 @@ import Footer from '@components/Footer'
 import Spotlight from '@components/Spotlight'
 import db from '@/db.json'
 
+const buildScript = "if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.setAttribute('data-build','')"
+
 export default function Page() {
-  const { info, about, principles, interests, languages, highlights, skills, projects, sideProjects, career } = db
+  const { info, about, principles, interests, languages, highlights, path, skills, projects, sideProjects, career } = db
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -32,9 +36,14 @@ export default function Page() {
       <a href='#main' className='sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-paper'>
         Skip to content
       </a>
+      {/* Arms the scroll-built hero before first paint, skipped when the visitor prefers reduced motion. */}
+      <script dangerouslySetInnerHTML={{ __html: buildScript }} />
       <Nav info={info} />
       <main id='main' className='flex flex-col'>
-        <Hero info={info} highlights={highlights} />
+        <Build info={info}>
+          <Hero info={info} highlights={highlights} />
+        </Build>
+        <Journey path={path} />
         <Work projects={projects} sideProjects={sideProjects} />
         <Experience career={career} />
         <Skills skills={skills} />
