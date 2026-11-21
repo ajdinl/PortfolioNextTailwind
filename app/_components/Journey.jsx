@@ -5,10 +5,6 @@ import StackScene from './StackScene'
 import styles from './Journey.module.css'
 
 const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value))
-const smoothstep = (edge0, edge1, x) => {
-  const t = clamp((x - edge0) / (edge1 - edge0))
-  return t * t * (3 - 2 * t)
-}
 
 // Which chapter lights up each layer (index 0 is the Interface on top).
 const layerChapter = [0, 1, 2, 3, 3]
@@ -46,66 +42,112 @@ function paint(v, rig, layers, box) {
   })
 }
 
+// How long each chapter stays on screen before the next one opens, and how long the move takes.
+const HOLD = [1000, 2600, 2600, 2800]
+const MOVE = 900
+const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2)
+
 export default function Journey({ path }) {
   const sectionRef = useRef(null)
   const stageRef = useRef(null)
   const rigRef = useRef(null)
   const layerRefs = useRef([])
+  const controlsRef = useRef(null)
   const [active, setActive] = useState(0)
+  const [finished, setFinished] = useState(false)
   const last = path.length - 1
 
   useEffect(() => {
     const section = sectionRef.current
     const stage = stageRef.current
+    const rig = rigRef.current
     const still = window.matchMedia('(prefers-reduced-motion: reduce), (max-height: 539px)')
+    let v = 0
+    let from = 0
+    let to = 0
+    let moveStart = 0
+    let moveTime = MOVE
     let frame = 0
+    let timer = 0
+    let inView = false
+    let autoplay = true
 
-    const update = () => {
-      frame = 0
-      const rig = rigRef.current
+    const draw = () => {
       const box = { width: rig.parentElement.clientWidth, height: rig.parentElement.clientHeight }
-      if (still.matches) {
-        stage.style.setProperty('--p', 1)
-        paint(last, rig, layerRefs.current, box)
-        setActive(last)
-        return
-      }
-      const rect = section.getBoundingClientRect()
-      const top = parseFloat(getComputedStyle(stage).top) || 0
-      const p = clamp((top - rect.top) / (rect.height - stage.offsetHeight))
-      const u = p * path.length - 0.5
-      const step = Math.floor(u)
-      const v = clamp(step + smoothstep(0.25, 0.75, u - step), 0, last)
-
-      stage.style.setProperty('--p', p.toFixed(4))
       paint(v, rig, layerRefs.current, box)
-      setActive(clamp(Math.round(u), 0, last))
+      stage.style.setProperty('--p', (v / last).toFixed(4))
+      setActive(Math.round(v))
+      setFinished(v >= last)
     }
 
-    const schedule = () => {
-      if (!frame) frame = requestAnimationFrame(update)
+    const step = (now) => {
+      frame = 0
+      const t = clamp((now - moveStart) / moveTime)
+      v = from + (to - from) * ease(t)
+      draw()
+      if (t < 1) frame = requestAnimationFrame(step)
+      else scheduleNext()
     }
 
-    update()
-    window.addEventListener('scroll', schedule, { passive: true })
-    window.addEventListener('resize', schedule)
-    still.addEventListener('change', schedule)
+    const moveTo = (index) => {
+      clearTimeout(timer)
+      from = v
+      to = clamp(index, 0, last)
+      moveTime = Math.min(1600, MOVE * Math.max(0.6, Math.abs(to - from)))
+      moveStart = performance.now()
+      cancelAnimationFrame(frame)
+      frame = requestAnimationFrame(step)
+    }
+
+    // Autoplay walks the chapters once while the section is on screen and pauses when it leaves.
+    const scheduleNext = () => {
+      clearTimeout(timer)
+      if (!autoplay || !inView || to >= last || still.matches) return
+      timer = setTimeout(() => moveTo(Math.round(to) + 1), HOLD[Math.round(to)] ?? 3000)
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        inView = entry.isIntersecting
+        if (inView) scheduleNext()
+        else clearTimeout(timer)
+      },
+      { threshold: 0.45 }
+    )
+
+    const settle = () => {
+      if (still.matches) {
+        clearTimeout(timer)
+        v = from = to = last
+      }
+      draw()
+    }
+
+    controlsRef.current = {
+      goTo: (index) => {
+        autoplay = false
+        moveTo(index)
+      },
+      replay: () => {
+        autoplay = true
+        moveTo(0)
+      },
+    }
+
+    settle()
+    observer.observe(section)
+    window.addEventListener('resize', settle)
+    still.addEventListener('change', settle)
     return () => {
       cancelAnimationFrame(frame)
-      window.removeEventListener('scroll', schedule)
-      window.removeEventListener('resize', schedule)
-      still.removeEventListener('change', schedule)
+      clearTimeout(timer)
+      observer.disconnect()
+      window.removeEventListener('resize', settle)
+      still.removeEventListener('change', settle)
     }
-  }, [path.length, last])
+  }, [last])
 
-  const goTo = (index) => {
-    const section = sectionRef.current
-    const stage = stageRef.current
-    const top = parseFloat(getComputedStyle(stage).top) || 0
-    const total = section.offsetHeight - stage.offsetHeight
-    const start = section.getBoundingClientRect().top + window.scrollY - top
-    window.scrollTo({ top: start + ((index + 0.5) / path.length) * total })
-  }
+  const goTo = (index) => controlsRef.current?.goTo(index)
 
   return (
     <section id='path' ref={sectionRef} className={`${styles.journey} print:hidden`} style={{ '--chapters': path.length }}>
@@ -175,9 +217,20 @@ export default function Journey({ path }) {
                     </ul>
                   )}
                   {index === last && (
-                    <a href='#work' tabIndex={active === index ? undefined : -1} className='btn-primary mt-6'>
-                      See projects
-                    </a>
+                    <div className='mt-6 flex flex-wrap gap-3'>
+                      <a href='#work' tabIndex={active === index ? undefined : -1} className='btn-primary'>
+                        See projects
+                      </a>
+                      <button
+                        type='button'
+                        onClick={() => controlsRef.current?.replay()}
+                        tabIndex={active === index ? undefined : -1}
+                        className={`btn-ghost ${styles.replay}`}
+                        disabled={!finished}
+                      >
+                        Replay
+                      </button>
+                    </div>
                   )}
                 </article>
               ))}

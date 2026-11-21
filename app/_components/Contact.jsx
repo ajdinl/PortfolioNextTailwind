@@ -5,7 +5,7 @@ export default function Contact({ info }) {
   const outlined = 'inline-flex h-11 items-center gap-2 rounded-full border border-ink/20 px-4 text-sm font-medium text-muted transition hover:border-ink/50 hover:text-ink'
 
   return (
-    <section id='contact' className='mx-auto w-full max-w-page px-5 pb-10 md:px-8 print:hidden'>
+    <section id='contact' className='snap-start mx-auto w-full max-w-page px-5 pb-10 md:px-8 print:hidden'>
       <div className='spotlight relative overflow-hidden rounded-[2rem] border border-ink/10 bg-surface p-8 text-ink md:p-16'>
         <div
           aria-hidden

@@ -5,7 +5,10 @@ import styles from './Build.module.css'
 
 const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value))
 const APPLY_AT = 0.68 // share of a step spent typing before the rule is applied
-const DONE_AT = 0.92 // share of the scroll after which the page is finished
+const DONE_AT = 0.92 // share of the timeline after which the page is finished
+const DURATION = 6500 // ms for the whole build when nobody interrupts it
+const START_DELAY = 500 // ms of "Loading" before typing starts
+const HIDE_AFTER = 1400 // ms the "Compiled successfully" panel stays up
 
 function getSteps(info, dark) {
   return [
@@ -104,12 +107,11 @@ function renderTyped(tokens, count) {
 export default function Build({ info, children }) {
   const wrapRef = useRef(null)
   const stageRef = useRef(null)
-  const spacerRef = useRef(null)
   const panelRef = useRef(null)
   const tabsRef = useRef(null)
   const codeRef = useRef(null)
   const footerRef = useRef(null)
-  const hintRef = useRef(null)
+  const skipRef = useRef(null)
   const overlayRef = useRef(null)
 
   useEffect(() => {
@@ -124,6 +126,8 @@ export default function Build({ info, children }) {
     const [marginBox, paddingBox, contentBox, label] = overlay.children
     const status = footer.querySelector('b')
     let frame = 0
+    let startAt = 0
+    let finishedAt = 0
     let settleUntil = 0
     let last = { key: '', html: '' }
     let target = null
@@ -166,13 +170,10 @@ export default function Build({ info, children }) {
       if (performance.now() < settleUntil) requestAnimationFrame(settle)
     }
 
-    const update = () => {
-      frame = 0
+    // Renders the build at progress p (0 = raw HTML, 1 = finished page).
+    const render = (p, waiting) => {
       const steps = getSteps(info, document.documentElement.classList.contains('dark'))
       const n = steps.length
-      const rect = wrap.getBoundingClientRect()
-      const top = parseFloat(getComputedStyle(stage).top) || 0
-      const p = clamp((top - rect.top) / spacerRef.current.offsetHeight)
       const x = clamp(p / DONE_AT) * n
       const done = x >= n
       const step = Math.min(n - 1, Math.floor(x))
@@ -217,19 +218,11 @@ export default function Build({ info, children }) {
       ;[...tabsRef.current.children].forEach((tab) => (tab.dataset.active = String(tab.textContent === current.file)))
 
       const applied = step > 0 && t >= APPLY_AT
-      status.textContent = done
-        ? 'Compiled successfully'
-        : p < 0.01
-          ? 'Loading'
-          : applied
-            ? 'Applied'
-            : `Writing ${current.file}`
+      status.textContent = done ? 'Compiled successfully' : waiting ? 'Loading' : applied ? 'Applied' : `Writing ${current.file}`
       footer.dataset.done = String(done)
-      const waiting = p < 0.015
-      footer.dataset.waiting = String(p < 0.01)
-      hintRef.current.dataset.visible = String(waiting && rect.bottom > top)
+      footer.dataset.waiting = String(Boolean(waiting))
       footer.style.setProperty('--progress', clamp(p / DONE_AT).toFixed(3))
-      panel.dataset.visible = String(p < 0.985 && rect.bottom > top)
+      skipRef.current.hidden = done
 
       const nextTarget = !done && step > 0 && current.target && t > 0.12 ? stage.querySelector(current.target) : null
       if (nextTarget !== target) {
@@ -246,17 +239,53 @@ export default function Build({ info, children }) {
       }
     }
 
-    const schedule = () => {
-      if (!frame) frame = requestAnimationFrame(update)
+    // Plays on its own from page load. Any scroll, key or the Skip button jumps to the end.
+    const tick = (now) => {
+      frame = 0
+      if (!startAt) startAt = now + START_DELAY
+      const p = finishedAt ? 1 : clamp((now - startAt) / DURATION)
+      render(p, now < startAt)
+      if (p >= DONE_AT && !finishedAt) finishedAt = now
+      const hide = finishedAt && now - finishedAt > HIDE_AFTER
+      panel.dataset.visible = String(!hide)
+      if (!hide) frame = requestAnimationFrame(tick)
+      else stop()
     }
 
-    update()
-    window.addEventListener('scroll', schedule, { passive: true })
-    window.addEventListener('resize', schedule)
+    const finish = () => {
+      if (finishedAt) return
+      finishedAt = performance.now()
+      cancelAnimationFrame(frame)
+      frame = requestAnimationFrame(tick)
+    }
+
+    const onKey = (event) => {
+      if (['ArrowDown', 'PageDown', 'End', ' ', 'Escape'].includes(event.key)) finish()
+    }
+    const onScroll = () => window.scrollY > 4 && finish()
+    const onResize = () => placeOverlay()
+    const skip = skipRef.current
+    const stop = () => {
+      window.removeEventListener('wheel', finish)
+      window.removeEventListener('touchmove', finish)
+      window.removeEventListener('keydown', onKey)
+      window.removeEventListener('scroll', onScroll)
+    }
+
+    // Arriving mid-page (refresh, anchor link) shows the finished hero straight away.
+    if (window.scrollY > 4 || window.location.hash) finishedAt = performance.now() - HIDE_AFTER
+    frame = requestAnimationFrame(tick)
+    window.addEventListener('wheel', finish, { passive: true })
+    window.addEventListener('touchmove', finish, { passive: true })
+    window.addEventListener('keydown', onKey)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onResize)
+    skip.addEventListener('click', finish)
     return () => {
       cancelAnimationFrame(frame)
-      window.removeEventListener('scroll', schedule)
-      window.removeEventListener('resize', schedule)
+      stop()
+      window.removeEventListener('resize', onResize)
+      skip.removeEventListener('click', finish)
     }
   }, [info])
 
@@ -265,27 +294,22 @@ export default function Build({ info, children }) {
       <div ref={stageRef} className={styles.stage}>
         {children}
       </div>
-      <div ref={spacerRef} className={styles.spacer} />
 
-      <div ref={panelRef} className={`${styles.panel} print:hidden`} aria-hidden>
-        <div ref={tabsRef} className={styles.tabs}>
+      <div ref={panelRef} className={`${styles.panel} print:hidden`}>
+        <div ref={tabsRef} className={styles.tabs} aria-hidden>
           <span>index.html</span>
           <span>styles.css</span>
         </div>
-        <pre ref={codeRef} className={styles.code} />
+        <pre ref={codeRef} className={styles.code} aria-hidden />
         <div ref={footerRef} className={styles.footer}>
-          <b>Loading</b>
-          <span className={styles.meter}>
+          <b aria-hidden>Loading</b>
+          <span className={styles.meter} aria-hidden>
             <i />
           </span>
+          <button ref={skipRef} type='button' className={styles.skip}>
+            Skip
+          </button>
         </div>
-      </div>
-
-      <div ref={hintRef} className={`${styles.hint} print:hidden`} aria-hidden>
-        <span className={styles.mouse}>
-          <i />
-        </span>
-        Scroll to build this page
       </div>
 
       <div ref={overlayRef} className={`${styles.overlay} print:hidden`} aria-hidden>

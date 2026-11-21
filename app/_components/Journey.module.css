@@ -1,16 +1,17 @@
-/* Scroll-driven "down the stack" story. Journey.jsx sets the variables from scroll position. */
+/* Autoplaying "down the stack" story. Journey.jsx drives the variables over time once it is in view. */
 
 .journey {
-  --chapter-scroll: 40svh;
-  --stage-top: 4rem;
   position: relative;
-  height: calc(var(--chapters) * var(--chapter-scroll) + 100svh - var(--stage-top));
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  /* html has scroll-padding-top: 5rem, this lands the section right under the 4rem nav */
+  scroll-margin-top: -1rem;
 }
 
 .stage {
-  position: sticky;
-  top: var(--stage-top);
-  height: calc(100svh - var(--stage-top));
+  position: relative;
+  height: calc(100svh - 4rem);
+  min-height: 560px;
   overflow: clip;
 }
 
@@ -656,5 +657,12 @@
   .wallFront i,
   .satellite::after {
     animation: none;
+  }
+}
+
+/* Replay only makes sense with motion on. */
+@media (prefers-reduced-motion: reduce), (max-height: 539px) {
+  .replay {
+    display: none;
   }
 }
